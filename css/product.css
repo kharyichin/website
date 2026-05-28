@@ -1,0 +1,101 @@
+/* ───────────────────────────────
+   Product / Case Study Pages
+   ─────────────────────────────── */
+
+.product-hero {
+  padding: 140px 0 80px;
+  text-align: center;
+  background: var(--color-bg-alt);
+}
+
+.product-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+
+.product-hero h1 {
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.product-subtitle {
+  font-size: clamp(17px, 2vw, 21px);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.product-body {
+  padding: 80px 0 100px;
+}
+
+.product-section {
+  margin-bottom: 56px;
+  max-width: 680px;
+}
+
+.product-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.product-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.product-section p {
+  font-size: 17px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.product-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.nav-links .active {
+  color: var(--color-text) !important;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .product-hero {
+    padding: 110px 0 60px;
+  }
+
+  .product-body {
+    padding: 56px 0 72px;
+  }
+
+  .product-section {
+    margin-bottom: 40px;
+  }
+
+  .product-section h2 {
+    font-size: 24px;
+  }
+
+  .product-nav {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
