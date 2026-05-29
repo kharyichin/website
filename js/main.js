@@ -5,9 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const openNav  = () => { toggle.classList.add("active");    links.classList.add("open");    };
   const closeNav = () => { toggle.classList.remove("active"); links.classList.remove("open"); };
 
-  toggle.addEventListener("click", () =>
-    links.classList.contains("open") ? closeNav() : openNav()
-  );
+  const closeBtn = document.getElementById("nav-close");
+  if (closeBtn) closeBtn.addEventListener("click", closeNav);
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    links.classList.contains("open") ? closeNav() : openNav();
+  });
+
+  links.addEventListener("click", (e) => e.stopPropagation());
+
+  document.addEventListener("click", () => {
+    if (links.classList.contains("open")) closeNav();
+  });
 
   // close when any link inside the sidebar is clicked (navigation follows naturally)
   links.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
@@ -23,6 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
         .getPropertyValue("--header-height"));
       window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset - 12,
                         behavior: "smooth" });
+    });
+  });
+
+  // experience accordion
+  document.querySelectorAll(".timeline-header").forEach((header) => {
+    header.addEventListener("click", () => {
+      const item = header.closest(".timeline-item");
+      const isOpen = item.classList.contains("open");
+      item.classList.toggle("open");
+      header.setAttribute("aria-expanded", String(!isOpen));
     });
   });
 

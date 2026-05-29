@@ -73,7 +73,14 @@
 
 .nav-links .active {
   color: var(--color-text) !important;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .nav-links .active {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.1);
+  }
 }
 
 @media (max-width: 768px) {
