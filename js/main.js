@@ -1,52 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("nav-toggle");
-  const links = document.getElementById("nav-links");
+  const links  = document.getElementById("nav-links");
 
-  toggle.addEventListener("click", () => {
-    toggle.classList.toggle("active");
-    links.classList.toggle("open");
-  });
+  const openNav  = () => { toggle.classList.add("active");    links.classList.add("open");    };
+  const closeNav = () => { toggle.classList.remove("active"); links.classList.remove("open"); };
 
-  links.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      toggle.classList.remove("active");
-      links.classList.remove("open");
-    });
-  });
+  toggle.addEventListener("click", () =>
+    links.classList.contains("open") ? closeNav() : openNav()
+  );
 
-  const anchors = document.querySelectorAll('a[href^="#"]');
-  anchors.forEach((anchor) => {
-    anchor.addEventListener("click", (e) => {
-      const id = anchor.getAttribute("href");
-      if (id === "#") return;
-      const target = document.querySelector(id);
+  // close when any link inside the sidebar is clicked (navigation follows naturally)
+  links.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
+
+  // smooth-scroll for in-page anchors only
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const target = document.querySelector(a.getAttribute("href"));
       if (!target) return;
       e.preventDefault();
-      toggle.classList.remove("active");
-      links.classList.remove("open");
-      const headerOffset = parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue("--header-height")
-      );
-      const top = target.getBoundingClientRect().top + window.scrollY - headerOffset - 12;
-      window.scrollTo({ top, behavior: "smooth" });
+      closeNav();
+      const offset = parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue("--header-height"));
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset - 12,
+                        behavior: "smooth" });
     });
   });
 
+  // scroll-reveal
   const fadeEls = document.querySelectorAll(
     ".about-content, .work-card, .timeline-item, .edu-card, .contact-content"
   );
   fadeEls.forEach((el) => el.classList.add("fade-in"));
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
+  new IntersectionObserver(
+    (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }),
     { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  ).observe && fadeEls.forEach((el) =>
+    new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }),
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    ).observe(el)
   );
-
-  fadeEls.forEach((el) => observer.observe(el));
 });
