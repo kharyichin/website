@@ -22,6 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // close when any link inside the sidebar is clicked (navigation follows naturally)
   links.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
 
+  // custom eased scroll
+  function smoothScrollTo(targetY, duration = 900) {
+    const startY = window.scrollY;
+    const distance = targetY - startY;
+    let startTime = null;
+    const ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const step = (ts) => {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      window.scrollTo(0, startY + distance * ease(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
   // smooth-scroll for in-page anchors only
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
@@ -31,8 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeNav();
       const offset = parseInt(getComputedStyle(document.documentElement)
         .getPropertyValue("--header-height"));
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset - 12,
-                        behavior: "smooth" });
+      smoothScrollTo(target.getBoundingClientRect().top + window.scrollY - offset - 12);
     });
   });
 
