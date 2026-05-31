@@ -301,6 +301,10 @@ img {
   animation: fadeUp 0.8s ease forwards 0.7s;
 }
 
+.hero .hero-photo-mobile {
+  display: none;
+}
+
 
 /* ───────────────────────────────
    Buttons
@@ -725,6 +729,14 @@ img {
   padding: 40px 36px;
 }
 
+.edu-card--main {
+  grid-row: span 2;
+}
+
+.edu-card--compact {
+  padding: 24px 28px;
+}
+
 .edu-card h3 {
   font-size: 21px;
   font-weight: 700;
@@ -926,6 +938,20 @@ img {
     min-height: 75vh;
   }
 
+  .hero .hero-photo-mobile {
+    display: block;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 18%;
+    margin: 0 auto 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards 0s;
+  }
+
   .about-layout {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -962,6 +988,10 @@ img {
 
   .edu-grid {
     grid-template-columns: 1fr;
+  }
+
+  .edu-card--main {
+    grid-row: auto;
   }
 
   .skills-grid {
