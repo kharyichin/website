@@ -386,6 +386,23 @@ img {
   color: var(--color-text);
 }
 
+.about-highlight {
+  color: var(--color-accent);
+}
+
+.about-cta {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition-base);
+}
+
+.about-cta:hover {
+  text-decoration-color: var(--color-accent);
+}
+
 .about-text p {
   font-size: 17px;
   color: var(--color-text-secondary);
@@ -688,6 +705,11 @@ img {
   height: 4px;
   border-radius: 50%;
   background: var(--color-accent);
+}
+
+.timeline-details li strong {
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 .work-card-footer {

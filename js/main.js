@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
   links.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
 
   // custom eased scroll
-  function smoothScrollTo(targetY, duration = 900) {
+  function smoothScrollTo(targetY, duration = 700) {
     const startY = window.scrollY;
     const distance = targetY - startY;
     let startTime = null;
-    const ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const ease = (t) => 1 - Math.pow(1 - t, 3);
     const step = (ts) => {
       if (!startTime) startTime = ts;
       const progress = Math.min((ts - startTime) / duration, 1);
