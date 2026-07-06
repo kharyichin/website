@@ -43,8 +43,7 @@
         <span class="product-tag">Side Project</span>
         <h1>FinClarity</h1>
         <p class="product-subtitle">
-          Your money is somewhere. FinClarity shows you where — one
-          statement upload, one clear monthly picture.
+          Your money is somewhere. FinClarity shows you where. Upload your bank statements to get one clear monthly picture.
         </p>
         <div class="product-meta">
           <span class="product-meta-pill">Next.js · TypeScript · Supabase · Claude API</span>
@@ -63,41 +62,37 @@
           <h2>The Idea</h2>
           <p>
             I track money across three banks, two wallets, and a spreadsheet
-            I keep abandoning. FinClarity started as a fix for that, and as
-            a chance to build something end to end instead of just
-            marketing it. Singapore doesn't have a great answer to this
-            either — SGFinDex exists, but bank participation is patchy, so
+            that I keep abandoning. FinClarity started as a fix for that, and as
+            a chance to build something end to end. The Singapore market doesn't have a great answer to this
+            either — SGFinDex exists, but bank participation is low and getting fewer, so
             most people are stuck tracking manually or not at all.
           </p>
           <div class="takeaway">
-            <strong>Why this problem:</strong> it was already annoying me.
-            My own spreadsheet habit turned out to be a better signal than
-            any market report.
+            <strong>Why this problem:</strong> 
+            I would imagine myself as someone who is pretty financially savvy. But my own spreadsheet habit turned out to be a better signal than
+            any market report. I did not know where my money went or how much savings I had across different plaforms. This was an easy way for me to do so without having to connect accounts. 
           </div>
         </div>
 
         <div class="product-section" id="discovery">
           <h2>The Pain Points</h2>
           <p>
-            There wasn't time for formal interviews, so here's the version
-            of that exercise I'd run with more of it — pain points I'd
-            expect from anyone juggling multiple banks, and what each one
-            means for the product.
+            These are pain points I heard from friends, and also felt myself. They drove the design decisions that followed.
           </p>
           <div class="pain-point-grid">
             <div class="pain-point-card">
               <p class="pain-point-quote">
                 "I check three banking apps and still don't know my full
-                picture."
+                picture. Some of the cashback are stuck on other rewards platforms"
               </p>
               <p class="pain-point-link">
-                <strong>&rarr; Unified view</strong> — one upload, one dashboard,
-                regardless of which bank issued the statement.
+                <strong>&rarr; Unified view</strong> — just upload your statements, regardless of which bank issued the statement. 
+                Let us do the work for you. You just need 1 dashboard.
               </p>
             </div>
             <div class="pain-point-card">
               <p class="pain-point-quote">
-                "I don't want to hand my banking login to some third-party app."
+                "Connecting accounts officially is practcally non-existent."
               </p>
               <p class="pain-point-link">
                 <strong>&rarr; No live API integration</strong> — statement
@@ -107,20 +102,11 @@
             </div>
             <div class="pain-point-card">
               <p class="pain-point-quote">
-                "I tried tracking in Excel. I gave up after a week."
+                "I tried tracking in Excel and whatever spend tracker apps I could find. I gave up after a week."
               </p>
               <p class="pain-point-link">
                 <strong>&rarr; Zero manual entry</strong> — extraction is
                 automatic; the only user action is uploading a PDF.
-              </p>
-            </div>
-            <div class="pain-point-card">
-              <p class="pain-point-quote">
-                "Budgeting apps make me feel judged about my spending."
-              </p>
-              <p class="pain-point-link">
-                <strong>&rarr; Progress-first framing</strong> — the monthly
-                narrative leads with wins, not a guilt trip.
               </p>
             </div>
             <div class="pain-point-card">
@@ -139,19 +125,18 @@
         <div class="product-section" id="journey">
           <h2>Customer Journey</h2>
           <p>
-            Mapped against a persona so the pain points earlier tie to a
-            real sequence, not just a list. (Illustrative — built from the
-            "who it's for" definition in scope, not a real user study.)
+            Here is a typical user journey mapped against a persona so the pain points earlier tie to something relatable. 
+            The journey map also shows how FinClarity responds to each pain point, and the emotional arc of the experience.
           </p>
 
           <div class="persona-card">
             <div class="persona-block">
               <span class="persona-label">Persona</span>
-              <p class="persona-value">Mei, 27 — juggles money across several banks and e-wallets, no single view of where it's all going</p>
+              <p class="persona-value">Justin, 27 — juggles money across several banks and e-wallets, no single view of where it's all going</p>
             </div>
             <div class="persona-block">
               <span class="persona-label">Scenario</span>
-              <p class="persona-value">Every month, Mei's money moves across accounts she rarely checks together. She just wants one clear picture without opening all of them separately.</p>
+              <p class="persona-value">Every month, Justin's money moves across accounts he rarely checks together. He just wants one clear picture without opening all of them separately.</p>
             </div>
           </div>
 
@@ -178,11 +163,11 @@
                 </tr>
                 <tr>
                   <th class="journey-map-rowlabel">User Actions</th>
-                  <td>Checks balances across separate apps, tallies spend in her head</td>
-                  <td>Logs transactions manually in Excel</td>
+                  <td>Checks balances across separate apps, tallies spend in his head</td>
+                  <td>Logs transactions manually in Excel and Spend Tracker</td>
                   <td>Explores a sample dashboard before signing up</td>
                   <td>Uploads one password-protected statement, then reads the plain-language summary</td>
-                  <td>Returns each month; watches her streak grow</td>
+                  <td>Returns each month; watches his streak grow</td>
                 </tr>
                 <tr class="journey-map-emotion-row">
                   <th class="journey-map-rowlabel">Emotion</th>
