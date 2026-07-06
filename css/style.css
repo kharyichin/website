@@ -485,7 +485,9 @@ img {
 
 .work-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  max-width: 480px;
+  margin: 0 auto;
   gap: 20px;
 }
 

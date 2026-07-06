@@ -60,6 +60,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // case-study page TOC scroll-spy
+  const toc = document.querySelector(".product-toc");
+  if (toc) {
+    const tocLinks = toc.querySelectorAll("a");
+    const sections = Array.from(tocLinks)
+      .map((a) => document.querySelector(a.getAttribute("href")))
+      .filter(Boolean);
+    const tocObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          tocLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
+        });
+      },
+      { rootMargin: "-20% 0px -70% 0px" }
+    );
+    sections.forEach((s) => tocObserver.observe(s));
+  }
+
   // scroll-reveal
   const fadeEls = document.querySelectorAll(
     ".about-content, .work-card, .timeline-item, .edu-card, .contact-content"
