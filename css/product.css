@@ -71,6 +71,10 @@
   flex-wrap: wrap;
 }
 
+.product-nav-end {
+  justify-content: flex-end;
+}
+
 .nav-links .active {
   color: var(--color-text) !important;
   font-weight: 600;
