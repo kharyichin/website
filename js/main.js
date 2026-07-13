@@ -79,6 +79,35 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((s) => tocObserver.observe(s));
   }
 
+  // screenshot lightbox
+  const shots = document.querySelectorAll(".screenshot-card img");
+  if (shots.length) {
+    const lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img class="lightbox-img" alt="">';
+    document.body.appendChild(lightbox);
+    const lightboxImg = lightbox.querySelector(".lightbox-img");
+
+    const openLightbox = (img) => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add("open");
+      document.body.classList.add("lightbox-locked");
+    };
+    const closeLightbox = () => {
+      lightbox.classList.remove("open");
+      document.body.classList.remove("lightbox-locked");
+    };
+
+    shots.forEach((img) => img.addEventListener("click", () => openLightbox(img)));
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target.classList.contains("lightbox-close")) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  }
+
   // scroll-reveal
   const fadeEls = document.querySelectorAll(
     ".about-content, .work-card, .timeline-item, .edu-card, .contact-content"
