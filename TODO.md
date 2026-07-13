@@ -26,3 +26,14 @@
       btn-secondary">My Products</a>` in `.hero-cta` (`index.html`) between
       "Learn more about me" and "Get in touch" — no CSS changes needed since
       `.hero-cta` already wraps.
+
+- [x] Make the FinClarity screenshot GIFs expandable on click, and capture the
+      app's other nav routes too. Done (2026-07-12): added a vanilla-JS
+      lightbox (`js/main.js` + `.lightbox` styles in `css/product.css`) that
+      opens any `.screenshot-card img` full-size on click, closable via ×,
+      backdrop click, or Escape. Also recorded a third GIF,
+      `images/finclarity-nav.gif`, clicking through Breakdown → Budget →
+      Upload History → Settings and toggling dark mode — confirmed the
+      /demo sample data doesn't persist to those routes (they're the real,
+      unauthenticated empty state), so this shows app structure/interaction
+      rather than fake data.
