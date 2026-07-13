@@ -84,13 +84,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (shots.length) {
     const lightbox = document.createElement("div");
     lightbox.className = "lightbox";
-    lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img class="lightbox-img" alt="">';
+    lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><figure class="lightbox-figure"><img class="lightbox-img" alt=""><figcaption class="lightbox-caption"></figcaption></figure>';
     document.body.appendChild(lightbox);
     const lightboxImg = lightbox.querySelector(".lightbox-img");
+    const lightboxCaption = lightbox.querySelector(".lightbox-caption");
 
     const openLightbox = (img) => {
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
+      const caption = img.closest(".screenshot-card")?.querySelector(".screenshot-card-caption");
+      lightboxCaption.textContent = caption ? caption.textContent : "";
       lightbox.classList.add("open");
       document.body.classList.add("lightbox-locked");
     };
