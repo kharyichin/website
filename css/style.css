@@ -341,6 +341,17 @@ img {
   color: #fff;
 }
 
+.btn-grey {
+  background: var(--color-text-secondary);
+  color: #fff;
+  border: 1px solid var(--color-text-secondary);
+}
+
+.btn-grey:hover {
+  background: var(--color-text);
+  border-color: var(--color-text);
+}
+
 
 /* ───────────────────────────────
    Section Shared
@@ -984,6 +995,10 @@ img {
   .about-details {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  .about-photo-wrap {
+    display: none;
   }
 
   .detail-card {
