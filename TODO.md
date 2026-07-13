@@ -9,3 +9,20 @@
       centered `.work-grid` (`max-width: 960px; margin: 0 auto`), and updated
       the mobile breakpoint so the image stacks above the text on narrow
       screens.
+
+- [x] Add GIFs under the FinClarity product page. Done (2026-07-12): recorded
+      two flows from the live demo with Playwright (guided tooltip
+      walkthrough + a scroll through the dashboard) and encoded them to GIF
+      with ffmpeg — `images/finclarity-tour.gif` and
+      `images/finclarity-scroll.gif`. Un-commented the `#screenshots` section
+      in `products/finclarity.html`, replaced the old placeholder tiles with
+      real `.screenshot-card` images, and restored the TOC link. Note: the
+      other placeholder ideas (upload flow, streak counter) aren't capturable
+      from the public demo since it's static sample data with no real upload
+      or streak state.
+
+- [x] Add a second hero CTA, "My Products", anchored to the Selected Work
+      section. Done (2026-07-12): added `<a href="#work" class="btn
+      btn-secondary">My Products</a>` in `.hero-cta` (`index.html`) between
+      "Learn more about me" and "Get in touch" — no CSS changes needed since
+      `.hero-cta` already wraps.
