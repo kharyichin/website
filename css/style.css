@@ -478,13 +478,15 @@ img {
 .work-grid {
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 480px;
-  margin: 0;
+  max-width: 960px;
+  margin: 0 auto;
   gap: 20px;
 }
 
 .work-card {
-  display: block;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: stretch;
   background: var(--color-bg-alt);
   border-radius: 20px;
   overflow: hidden;
@@ -496,11 +498,25 @@ img {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
+.work-card-media {
+  background: var(--color-bg-alt);
+  overflow: hidden;
+}
+
+.work-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
 .work-card-inner {
   padding: 40px 36px;
   min-height: 260px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .work-tag {
@@ -977,6 +993,15 @@ img {
 
   .work-grid {
     grid-template-columns: 1fr;
+  }
+
+  .work-card {
+    grid-template-columns: 1fr;
+  }
+
+  .work-card-media img {
+    aspect-ratio: 16 / 10;
+    object-position: top center;
   }
 
   .work-card-inner {
