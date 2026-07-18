@@ -15,6 +15,8 @@
   --color-text-secondary: #6e6e73;
   --color-accent: #0071e3;
   --color-accent-hover: #0077ed;
+  --color-coral: #d9663f;
+  --color-coral-hover: #c8562f;
   --color-border: #d2d2d7;
   --color-card-bg: #ffffff;
   --color-dark-bg: #1d1d1f;
@@ -350,6 +352,15 @@ img {
 .btn-grey:hover {
   background: var(--color-text);
   border-color: var(--color-text);
+}
+
+.btn-coral {
+  background: var(--color-coral);
+  color: #fff;
+}
+
+.btn-coral:hover {
+  background: var(--color-coral-hover);
 }
 
 
