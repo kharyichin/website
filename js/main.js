@@ -1,3 +1,19 @@
+// animated favicon intro — cycles ◦ • ☻ then holds on ☻
+(() => {
+  const frames = ["◦", "•", "☻"];
+  let link = document.querySelector("link[rel~='icon']");
+  if (!link) {
+    link = document.createElement("link");
+    link.rel = "icon";
+    document.head.appendChild(link);
+  }
+  const setFrame = (char) => {
+    const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='54' font-size='88' text-anchor='middle' dominant-baseline='middle'>${char}</text></svg>`;
+    link.href = `data:image/svg+xml,${encodeURIComponent(svg)}`;
+  };
+  frames.forEach((char, i) => setTimeout(() => setFrame(char), i * 350));
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("nav-toggle");
   const links  = document.getElementById("nav-links");
@@ -113,16 +129,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // scroll-reveal
   const fadeEls = document.querySelectorAll(
-    ".about-content, .work-card, .timeline-item, .edu-card, .contact-content"
+    ".about-content, .work-card, .timeline-item, .edu-card, .namecard-flip, .section-label, .product-section"
   );
   fadeEls.forEach((el) => el.classList.add("fade-in"));
-  new IntersectionObserver(
+  const revealObserver = new IntersectionObserver(
     (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }),
     { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-  ).observe && fadeEls.forEach((el) =>
-    new IntersectionObserver(
-      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }),
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    ).observe(el)
   );
+  fadeEls.forEach((el) => revealObserver.observe(el));
+
+  // section-label spark accent — small embers flickering along the full underline
+  document.querySelectorAll(".section-label").forEach((label) => {
+    const width = label.offsetWidth || 30;
+    const count = Math.max(5, Math.min(16, Math.round(width / 20)));
+    for (let i = 0; i < count; i++) {
+      const spark = document.createElement("span");
+      spark.className = "section-spark";
+      if (i % 2 === 1) spark.classList.add("section-spark--apricot");
+      spark.style.left = `${Math.round(Math.random() * width)}px`;
+      spark.style.animationDelay = `${(Math.random() * 2.4).toFixed(2)}s`;
+      spark.style.animationDuration = `${(1.8 + Math.random() * 1.4).toFixed(2)}s`;
+      label.appendChild(spark);
+    }
+  });
+
+  // namecard flip easter egg
+  document.querySelectorAll(".namecard-flip-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const flip = document.getElementById(btn.dataset.flipTarget);
+      if (flip) flip.classList.toggle("is-flipped");
+    });
+  });
+
+  // work-card image galleries
+  document.querySelectorAll(".work-card-media.gallery").forEach((media) => {
+    const imgs = media.querySelectorAll("img");
+    if (imgs.length < 2) return;
+
+    const dotsWrap = document.createElement("div");
+    dotsWrap.className = "work-card-dots";
+    imgs.forEach((_, i) => {
+      const dot = document.createElement("span");
+      if (i === 0) dot.classList.add("is-active");
+      dotsWrap.appendChild(dot);
+    });
+    media.appendChild(dotsWrap);
+    const dots = dotsWrap.querySelectorAll("span");
+
+    let active = 0;
+    setInterval(() => {
+      imgs[active].classList.remove("is-active");
+      dots[active].classList.remove("is-active");
+      active = (active + 1) % imgs.length;
+      imgs[active].classList.add("is-active");
+      dots[active].classList.add("is-active");
+    }, 5000);
+  });
 });

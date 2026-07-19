@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>PropertyAgent — Khar Yi's Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/product.css">
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav-container">
+      <a href="../index.html" class="nav-logo">KY</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+
+    </nav>
+  </header>
+  <ul class="nav-links" id="nav-links">
+    <li class="nav-close-item">
+      <button class="nav-close" id="nav-close" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 19H5V17H7V19ZM19 19H17V17H19V19ZM9 15V17H7V15H9ZM17 17H15V15H17V17ZM11 15H9V13H11V15ZM15 15H13V13H15V15ZM13 13H11V11H13V13ZM11 11H9V9H11V11ZM15 11H13V9H15V11ZM9 9H7V7H9V9ZM17 9H15V7H17V9ZM7 7H5V5H7V7ZM19 7H17V5H19V7Z"/></svg>
+      </button>
+    </li>
+        <li class="nav-section-label">Selected Work</li>
+        <li><a href="finclarity.html"><svg class="nav-pixel-icon nav-icon-chart" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2h16v2H4zm0 18h16v2H4zM2 4h2v16H2zm18 0h2v16h-2zm-9 8h2v6h-2zm-4 2h2v4H7zm8-8h2v12h-2z"/></svg>
+            FinClarity</a></li>
+        <li><a href="property-agent.html" class="active"><svg class="nav-pixel-icon nav-icon-house" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 2h2v2h-2zM9 4h2v2H9zm4 0h2v2h-2zM7 6h2v2H7zm8 0h2v2h-2zM5 8h14v2H5zM5 10h2v10H5zm12 0h2v10h-2zM8 10h2v2H8zm6 0h2v2h-2zM10 14h4v6h-4z"/></svg>
+            PropertyAgent</a></li>
+        <li><a href="../index.html#contact" class="nav-contact"><svg class="nav-pixel-icon nav-icon-mail" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g class="mail-closed"><path d="M2 6h2v12H2zm18 0h2v12h-2zM4 4h16v2H4zm0 14h16v2H4z"/><path d="M6 8h2v2H6zm2 2h2v2H8zm10-2h-2v2h2zm-2 2h-2v2h2zm-6 2h4v2h-4z"/></g><g class="mail-open"><path d="M22 22H2V8h2v2h2v2H4v8h16v-8h-2v-2h2V8h2v14Zm-6-6H8v-2h8v2Zm-8-2H6v-2h2v2Zm10 0h-2v-2h2v2ZM6 8H4V6h2v2Zm14 0h-2V6h2v2ZM8 6H6V4h2v2Zm10 0h-2V4h2v2Zm-2-2H8V2h8v2Z"/></g></svg>
+            Contact</a></li>
+      </ul>
+
+  <main>
+    <section class="product-hero">
+      <div class="container">
+        <span class="product-tag">Hackathon Project</span>
+        <h1>PropertyAgent</h1>
+        <p class="product-subtitle">
+          Search Singapore property in plain English, get an instant fair-value verdict, and book the viewing — no agent required. Built in 9 days for the Google Cloud Rapid Agent Hackathon, Elastic partner track.
+        </p>
+        <div class="product-meta-wrap">
+          <div class="product-meta">
+            <span class="product-meta-pill">Product Manager · built with Wai Lun, full-stack engineer</span>
+            <span class="product-meta-pill">Next.js · Google ADK · Gemini 2.5 Flash · Elasticsearch</span>
+            <span class="product-meta-pill"><a href="https://propertyagent.kharyi.com/search" target="_blank" rel="noopener">Live demo &rarr;</a></span>
+            <span class="product-meta-pill"><a href="https://github.com/suenwl/property-agent" target="_blank" rel="noopener">GitHub &rarr;</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-body">
+      <div class="container product-section--wide">
+        <div class="product-layout">
+        <div class="product-main">
+
+        <div class="product-section" id="idea">
+          <h2>The Idea</h2>
+          <p>
+            Going DIY on a Singapore property transaction is meant to save the commission
+            — 1–2% for buyers, 2% for sellers, half a month to a full month's rent for
+            tenants and landlords. In practice, most people hit an information and
+            compliance wall instead: search, valuation data, and legal timelines all live
+            on separate platforms with nothing synthesizing them. Existing chatbots don't
+            close that gap either — they answer questions, but they don't act. PropertyAgent
+            started as our answer to that gap for the Google Cloud Rapid Agent Hackathon: an
+            agent that searches, evaluates a price, and books the viewing, instead of a
+            search bar with a chat widget bolted on.
+          </p>
+          <div class="takeaway">
+            <strong>My role:</strong>
+            I was the PM on this one, not the engineer. I framed the problem, wrote the
+            personas and the PRD, and made the scope calls against a hackathon deadline.
+            Wai Lun built the full stack. This case study covers what I owned — the
+            problem framing, the requirements, and what got cut and why — not the code.
+          </div>
+        </div>
+
+        <div class="product-section" id="discovery">
+          <h2>The Pain Points</h2>
+          <p>
+            These map straight to what we actually shipped in 9 days, not the full
+            platform vision in the PRD — see <a href="#scoping">Scoping It</a> for what
+            didn't make the cut.
+          </p>
+          <div class="pain-point-grid">
+            <div class="pain-point-card">
+              <p class="pain-point-quote">
+                "An agent's commission is 1–2% of a sale, or a month's rent — just to
+                have someone tell me information that's mostly already public."
+              </p>
+              <p class="pain-point-link">
+                <strong>&rarr; No agent in the loop</strong> — search, valuation, and
+                scheduling all live in one platform, with no commission anywhere in
+                the flow.
+              </p>
+            </div>
+            <div class="pain-point-card">
+              <p class="pain-point-quote">
+                "Pre-set filters exclude places that don't fit rigid criteria — and I
+                don't even know what I'm missing."
+              </p>
+              <p class="pain-point-link">
+                <strong>&rarr; Conversational search</strong> — describe what you want
+                in plain language; the agent extracts structured filters and searches
+                live listings, not a fixed dropdown.
+              </p>
+            </div>
+            <div class="pain-point-card">
+              <p class="pain-point-quote">
+                "I have no idea if a price is fair. Bid too high and I overpay on
+                COV, bid too low and I lose the flat."
+              </p>
+              <p class="pain-point-link">
+                <strong>&rarr; Instant valuation verdict</strong> — the agent compares
+                a listing against comparable percentile pricing and returns
+                Overpriced / Fair value / Good deal, with the number behind it.
+              </p>
+            </div>
+            <div class="pain-point-card">
+              <p class="pain-point-quote">
+                "Coordinating a viewing means messaging multiple owners across
+                different platforms and juggling everyone's calendar by hand."
+              </p>
+              <p class="pain-point-link">
+                <strong>&rarr; Auto-scheduled viewings</strong> — the agent checks
+                Google Calendar free/busy and books the slot directly, no
+                back-and-forth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-section" id="journey">
+          <h2>Customer Journey</h2>
+          <p>
+            We mapped this against Josh, a first-time buyer persona from the pitch deck,
+            to keep the pain points tied to something concrete — and to be honest about
+            where the hackathon build stops short of the full PRD vision.
+          </p>
+
+          <div class="persona-card">
+            <div class="persona-block">
+              <span class="persona-label">Persona</span>
+              <p class="persona-value">Josh — first-time HDB buyer, going DIY to avoid the agent commission, has never done a resale transaction before</p>
+            </div>
+            <div class="persona-block">
+              <span class="persona-label">Scenario</span>
+              <p class="persona-value">Josh needs to find a flat that fits his lifestyle, book viewings without the usual back-and-forth, and know whether an asking price is worth bidding on — all without a buyer's agent.</p>
+            </div>
+          </div>
+
+          <div class="journey-map-wrap">
+            <table class="journey-map">
+              <thead>
+                <tr>
+                  <th class="journey-map-rowlabel"></th>
+                  <th class="stage-1">Discovery &amp; Search</th>
+                  <th class="stage-2">Viewing &amp; Shortlisting</th>
+                  <th class="stage-3">Offer &amp; Bidding</th>
+                  <th class="stage-4">Admin Completion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="journey-map-rowlabel">Touchpoint</th>
+                  <td>Conversational search bar</td>
+                  <td>Property modal &rarr; agent chat</td>
+                  <td>Valuation verdict panel</td>
+                  <td>HDB resale process (off-platform)</td>
+                </tr>
+                <tr>
+                  <th class="journey-map-rowlabel">User Actions</th>
+                  <td>Describes the flat he wants in plain language; agent returns matches on the map</td>
+                  <td>Opens a shortlisted listing, asks the agent about the deal, requests a viewing slot</td>
+                  <td>Reads the Overpriced / Fair / Good deal verdict and comparable price range before deciding to bid</td>
+                  <td>Continues the OTP, valuation request, and HFE process manually, outside the platform</td>
+                </tr>
+                <tr class="journey-map-emotion-row">
+                  <th class="journey-map-rowlabel">Emotion</th>
+                  <td class="emotion emotion--mid"><span class="emotion-emoji">&#129300;</span>Curious</td>
+                  <td class="emotion emotion--pos"><span class="emotion-emoji">&#128578;</span>Relieved</td>
+                  <td class="emotion emotion--pos"><span class="emotion-emoji">&#128526;</span>Confident</td>
+                  <td class="emotion emotion--neg"><span class="emotion-emoji">&#128533;</span>On his own again</td>
+                </tr>
+                <tr>
+                  <th class="journey-map-rowlabel">Pain Point</th>
+                  <td>Rigid filters miss what he's actually looking for</td>
+                  <td>Manual coordination across owners and platforms eats time</td>
+                  <td>No anchor for what to bid — fear of overpaying or losing the unit</td>
+                  <td>No single source of truth for statutory deadlines</td>
+                </tr>
+                <tr class="journey-map-response-row">
+                  <th class="journey-map-rowlabel">PropertyAgent Response</th>
+                  <td>Extracts structured filters from open-ended text, searches a live Elasticsearch index instead of dropdowns</td>
+                  <td>Agent checks calendar free/busy and books the viewing directly via the Google Calendar API</td>
+                  <td>Compares listing PSF against percentile benchmarks from comparable listings, returns a verdict plus fair-price range</td>
+                  <td class="journey-map-dash">— out of hackathon scope</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="takeaway">
+            <strong>The bet:</strong> if Discovery-to-Viewing already feels faster than
+            switching between five listing sites, the agent earns the right to go
+            deeper into the transaction next — starting with valuation, then
+            scheduling, and eventually the statutory workflow the full PRD envisions.
+          </div>
+        </div>
+
+        <div class="product-section" id="scoping">
+          <h2>Scoping It</h2>
+          <p>
+            The PRD I wrote covers a full platform — Singpass verification, statutory
+            milestone tracking, contract generation, monetization. Nine days with one
+            engineer meant almost none of that could ship. Every cut needed an actual
+            reason.
+          </p>
+          <div class="crit-risk-grid">
+            <div class="crit-risk-block">
+              <h3>Cut, and why</h3>
+              <ul class="risk-list">
+                <li>Singpass verification &amp; MyInfo pull — needs real government API access and legal review, not a hackathon sandbox</li>
+                <li>Statutory milestone tracker (OTP, Request for Value, Resale Application) — high compliance surface area; needed real HDB data plumbing we didn't have time to build safely</li>
+                <li>Multi-language translation layer — nice to have, not core to proving the agent loop</li>
+                <li>Legal document generation (CEA tenancy agreement, OTP auto-fill) — regulatory risk, not something to prototype under deadline</li>
+                <li>Monetization (premium pass, legal closure kit, affiliate fees) — not needed to prove the concept</li>
+              </ul>
+            </div>
+            <div class="crit-risk-block">
+              <h3>Kept, and why</h3>
+              <ul class="crit-list">
+                <li>Conversational search over Elasticsearch — the core "beyond rigid filters" bet, and the reason for the Elastic partner track</li>
+                <li>Auto-scheduled viewings via Google Calendar — the clearest "no manual coordination" win, small enough to ship in days</li>
+                <li>Instant valuation verdict — a percentile-based read on price, without needing a licensed financial advice product</li>
+                <li>A synthetic ~700-listing dataset instead of live HDB/URA feeds — sidesteps data-access and licensing lead time while still proving the search-and-valuation loop end to end</li>
+              </ul>
+            </div>
+          </div>
+          <div class="takeaway">
+            <strong>Caught myself:</strong> the PRD called for a "walk-away price
+            ceiling" from a full bidding simulator. What we could actually ship in a
+            week was a directional verdict, not a hard number — and framing it as a
+            verdict rather than a guarantee turned out to be the more honest claim
+            anyway.
+          </div>
+        </div>
+
+        <div class="product-section" id="requirements">
+          <h2>Requirements</h2>
+          <p>
+            The PRD turned scope into criteria specific enough that Wai Lun could check
+            a build against them without asking me what I meant. A few examples:
+          </p>
+          <ul class="crit-list">
+            <li>Filter extraction returns typed values through a function-tool call the frontend merges directly — no text-parsing fallback in production</li>
+            <li>A valuation verdict always states Overpriced / Fair value / Good deal plus the % deviation from median comparable PSF — never a bare label with no number behind it</li>
+            <li>The agent auto-detects whether a message is a search request or a market question, and only calls the filter tool for the former, so analytics questions never corrupt the active filters</li>
+            <li>Viewing requests check the host's live Google Calendar free/busy before offering a slot — never book blind</li>
+          </ul>
+        </div>
+
+        <div class="product-section" id="approach">
+          <h2>Technical Approach</h2>
+          <p>
+            One call shaped the rest: routing search and valuation through Elastic's
+            own Kibana Agent Builder MCP server, rather than querying Elasticsearch
+            directly from application code — a requirement of the hackathon's Elastic
+            partner track, and the reason filter search and valuation numbers reflect a
+            live index instead of hardcoded logic.
+          </p>
+
+          <div class="ta-scroll">
+            <div class="ta-diagram">
+
+              <div class="ta-runtime">
+                <span class="ta-runtime-label">Google Cloud Run (Next.js App)</span>
+
+                <div class="ta-row--main">
+                  <div class="ta-box ta-box--blue">
+                    <span class="ta-box-title">Next.js Frontend</span>
+                    <ul class="ta-box-list">
+                      <li>Agent chat panel</li>
+                      <li>Property list &amp; map</li>
+                      <li>User calendar view</li>
+                    </ul>
+                  </div>
+
+                  <div class="ta-connector">&rarr;</div>
+
+                  <div class="ta-box ta-box--blue">
+                    <span class="ta-box-title">Next.js Backend</span>
+                    <ul class="ta-box-list">
+                      <li>Calls agent to build property filters, returns to frontend</li>
+                      <li>Executes ES queries</li>
+                      <li>Books viewings for user</li>
+                    </ul>
+                    <div class="ta-nested ta-nested--amber">
+                      <span class="ta-nested-title">Google OAuth 2.0</span>
+                      <span class="ta-nested-sub">accounts.google.com</span>
+                    </div>
+                  </div>
+
+                  <div class="ta-connector">&rarr;</div>
+
+                  <div class="ta-box ta-box--purple">
+                    <span class="ta-box-title">Google ADK Agent</span>
+                    <div class="ta-box-split">
+                      <ul class="ta-box-list">
+                        <li>FunctionTools — extract_property_filters, get_free_slots, create_viewing_event</li>
+                        <li>MCP Toolset — generate_esql, execute_esql, get_index_mapping, search, get_document</li>
+                      </ul>
+                      <div class="ta-nested ta-nested--yellow">
+                        <span class="ta-nested-title">Vertex AI</span>
+                        <span class="ta-nested-sub">gemini-2.5-flash · asia-southeast1</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ta-external-arrows">
+                <div class="ta-arrow-col ta-arrow-col--green">
+                  <span class="ta-arrow-line ta-arrow-line--dashed"></span>
+                  <span class="ta-arrow-label">MCP over HTTP (ES|QL) — search &amp; valuation queries</span>
+                </div>
+                <div class="ta-arrow-col ta-arrow-col--red">
+                  <span class="ta-arrow-line"></span>
+                  <span class="ta-arrow-label">Calendar API calls — free/busy &amp; create event</span>
+                </div>
+              </div>
+
+              <div class="ta-row--external">
+                <div class="ta-box ta-box--green">
+                  <span class="ta-box-title">Elastic Cloud</span>
+                  <ul class="ta-box-list">
+                    <li>Kibana Agent Builder MCP — /api/agent_builder/mcp</li>
+                    <li>Elasticsearch — property index, ~700 SG listings</li>
+                  </ul>
+                </div>
+                <div class="ta-box ta-box--red">
+                  <span class="ta-box-title">Google Calendar API</span>
+                  <ul class="ta-box-list">
+                    <li>Free/busy queries</li>
+                    <li>Create viewing events</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="takeaway">
+            <strong>Why:</strong> putting search, aggregations, and even ES|QL
+            generation behind Elastic's MCP tools — instead of writing our own query
+            layer — meant the agent could reason about the index directly, and it's
+            what qualified the build for the Elastic partner track.
+          </div>
+        </div>
+
+        <div class="product-section" id="building">
+          <h2>Building It</h2>
+          <p>
+            Nine days, one engineer, each stage sitting on top of something that
+            already worked before the next layer went on.
+          </p>
+          <div class="build-steps">
+            <div class="build-step" data-step="1">
+              <div class="build-step-title">Data foundation</div>
+              <div class="build-step-body">Synthetic ~700-listing Singapore property dataset generated and bulk-ingested into Elasticsearch with a geo_point mapping.</div>
+            </div>
+            <div class="build-step" data-step="2">
+              <div class="build-step-title">Search MVP</div>
+              <div class="build-step-body">Next.js scaffold, chat panel, and a first working search-and-chat loop against the index.</div>
+            </div>
+            <div class="build-step" data-step="3">
+              <div class="build-step-title">Renamed to PropertyAgent, valuation logic added</div>
+              <div class="build-step-body">Property valuation feature and multi-select filters (town, furnishing) shipped alongside the rename.</div>
+            </div>
+            <div class="build-step" data-step="4">
+              <div class="build-step-title">Switched to Gemini 2.5 Flash</div>
+              <div class="build-step-body">Agent moved onto Gemini 2.5 Flash via Vertex AI mid-build, replacing the earlier model.</div>
+            </div>
+            <div class="build-step" data-step="5">
+              <div class="build-step-title">Valuation panel &amp; listing images</div>
+              <div class="build-step-body">Valuation moved into the property modal directly; listing photos added for realism.</div>
+            </div>
+            <div class="build-step" data-step="6">
+              <div class="build-step-title">Deploy to Cloud Run</div>
+              <div class="build-step-body">First deployment to Google Cloud Run, with image accessibility fixes to follow.</div>
+            </div>
+            <div class="build-step" data-step="7">
+              <div class="build-step-title">Viewing booking</div>
+              <div class="build-step-body">Google Calendar free/busy and event-creation tools wired into the agent; map legend and filter fixes.</div>
+            </div>
+            <div class="build-step" data-step="8">
+              <div class="build-step-title">Submission prep</div>
+              <div class="build-step-body">Auth removed so hackathon judges could reach the live demo without credentials; README, license, and architecture diagram finalized.</div>
+            </div>
+          </div>
+
+          <div class="crit-risk-grid">
+            <div class="crit-risk-block">
+              <h3>Acceptance criteria</h3>
+              <ul class="crit-list">
+                <li>Filter-extraction tool call returns typed values the UI merges directly, with no text-parsing fallback in production</li>
+                <li>Valuation verdict always pairs a classification with the fair-price range behind it</li>
+                <li>Calendar booking checks free/busy before offering a slot to the requester</li>
+              </ul>
+            </div>
+            <div class="crit-risk-block">
+              <h3>Risks encountered</h3>
+              <ul class="risk-list">
+                <li>The model swap to Gemini 2.5 Flash landed mid-week, which meant re-validating agent behaviour late in the build</li>
+                <li>Map pins failed to render on initial load in one build — caught and fixed before demo day</li>
+                <li>Auth was pulled entirely just before submission so judges could reach the demo without credentials — a reasonable call for a judged demo, not how this would ship to real users</li>
+              </ul>
+            </div>
+          </div>
+          <div class="takeaway">
+            <strong>Trade-off:</strong> a 9-day team hackathon means the PM's job is
+            deciding what doesn't get built, not just what does — see
+            <a href="#scoping">Scoping It</a> for the calls that mattered most.
+          </div>
+        </div>
+
+        <div class="product-section" id="roadmap">
+          <h2>What's Next</h2>
+          <p>Straight from the pitch deck's closing slide — the gaps we know about:</p>
+          <ul class="crit-list">
+            <li>Buyer &amp; seller verification logic, to eliminate ghosting, lowballing, and false signals in self-directed deals</li>
+            <li>A structured, data-backed bidding flow that goes beyond a directional verdict to lower emotional friction at offer stage</li>
+            <li>A step-by-step statutory milestone tracker — the Administrative Completion stage flagged as unbuilt in the <a href="#journey">Customer Journey</a> above</li>
+          </ul>
+        </div>
+
+        <div class="product-section" id="reflection">
+          <h2>Reflection</h2>
+          <p>
+            The real difference between this and a solo project: my job wasn't writing
+            code, it was making sure Wai Lun never had to guess what "done" meant, and
+            being decisive about what didn't survive contact with a 9-day deadline.
+          </p>
+          <div class="takeaway">
+            <strong>Next time:</strong> scope the language of a feature as carefully as
+            its logic. Calling the valuation output a "verdict" instead of a
+            "prediction" wasn't just wording — it set the right expectation for what a
+            percentile comparison can and can't promise.
+          </div>
+          <div class="takeaway">
+            <strong>Next time:</strong> write requirements as things checkable against
+            a running agent, not just user stories. The PRD lines that held up best
+            under a hackathon deadline were the ones specific enough to verify without
+            asking me what I meant.
+          </div>
+        </div>
+
+        <div class="product-nav product-nav-end">
+          <a href="https://propertyagent.kharyi.com/search" target="_blank" rel="noopener" class="btn btn-primary">Try the Live Demo &rarr;</a>
+        </div>
+
+        </div>
+
+        <aside class="product-toc">
+          <span class="product-toc-label">On this page</span>
+          <a href="#idea">The Idea</a>
+          <a href="#discovery">Pain Points</a>
+          <a href="#journey">Customer Journey</a>
+          <a href="#scoping">Scoping It</a>
+          <a href="#requirements">Requirements</a>
+          <a href="#approach">Technical Approach</a>
+          <a href="#building">Building It</a>
+          <a href="#roadmap">What's Next</a>
+          <a href="#reflection">Reflection</a>
+        </aside>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Khar Yi Chin. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
