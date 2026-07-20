@@ -15,6 +15,8 @@
   --color-text-secondary: #6e6e73;
   --color-accent: #0071e3;
   --color-accent-hover: #0058b1;
+  --color-blue-soft: #D6E7FB;
+  --color-blue-soft-text: #0B4A87;
   --color-coral: #F08080;
   --color-coral-hover: #C46868;
   --color-apricot: #FFB347;
@@ -590,8 +592,8 @@ h1, h2, h3 {
   max-width: 64%;
   border-radius: 16px;
   padding: 12px 18px;
-  background: var(--color-apricot);
-  color: var(--color-apricot-text);
+  background: var(--color-blue-soft);
+  color: var(--color-blue-soft-text);
   transform: rotate(-3deg);
 }
 
@@ -614,7 +616,7 @@ h1, h2, h3 {
 }
 
 .badge-seal-bg {
-  fill: var(--color-coral);
+  fill: var(--color-accent);
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.22));
 }
 
@@ -643,14 +645,16 @@ h1, h2, h3 {
 
 .badge-seal-number {
   fill: #fff;
-  font-family: var(--font-script);
-  font-size: 46px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 40px;
 }
 
 .detail-number {
-  font-family: var(--font-script);
-  font-size: 28px;
-  line-height: 1.15;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
   letter-spacing: -0.01em;
 }
 
