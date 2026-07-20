@@ -423,48 +423,10 @@ h1, h2, h3 {
   position: absolute;
   left: 0;
   bottom: 6px;
-  height: 1px;
-  width: 0;
-  background: var(--color-coral);
-  opacity: 0.5;
-  transition: width 0.5s ease 0.1s;
-}
-
-.section-label.visible::after {
-  width: 100%;
-}
-
-.section-spark {
-  position: absolute;
-  bottom: 5px;
-  width: 3px;
   height: 3px;
-  border-radius: 50%;
+  width: 36px;
   background: var(--color-coral);
-  box-shadow: 0 0 5px 1px var(--color-coral);
-  opacity: 0;
-  pointer-events: none;
-  animation: sparkFlicker 2.2s ease-in-out infinite;
-}
-
-.section-spark--apricot {
-  background: var(--color-apricot);
-  box-shadow: 0 0 5px 1px var(--color-apricot);
-}
-
-@keyframes sparkFlicker {
-  0%, 100% {
-    opacity: 0;
-    transform: scale(0.3) translateY(0);
-  }
-  35% {
-    opacity: 0.9;
-    transform: scale(1) translateY(-4px);
-  }
-  75% {
-    opacity: 0;
-    transform: scale(0.4) translateY(-9px);
-  }
+  border-radius: 2px;
 }
 
 

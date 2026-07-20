@@ -138,21 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   fadeEls.forEach((el) => revealObserver.observe(el));
 
-  // section-label spark accent — small embers flickering along the full underline
-  document.querySelectorAll(".section-label").forEach((label) => {
-    const width = label.offsetWidth || 30;
-    const count = Math.max(5, Math.min(16, Math.round(width / 20)));
-    for (let i = 0; i < count; i++) {
-      const spark = document.createElement("span");
-      spark.className = "section-spark";
-      if (i % 2 === 1) spark.classList.add("section-spark--apricot");
-      spark.style.left = `${Math.round(Math.random() * width)}px`;
-      spark.style.animationDelay = `${(Math.random() * 2.4).toFixed(2)}s`;
-      spark.style.animationDuration = `${(1.8 + Math.random() * 1.4).toFixed(2)}s`;
-      label.appendChild(spark);
-    }
-  });
-
   // namecard flip easter egg
   document.querySelectorAll(".namecard-flip-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
