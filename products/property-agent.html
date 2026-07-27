@@ -140,7 +140,9 @@
         <div class="product-section" id="journey">
           <h2>Customer Journey</h2>
           <p>
-            The journey map below shows how a first-time buyer's homeownership journey with and without the agent.
+            Before PropertyAgent, Josh had two options: pay a traditional agent, or do it all
+            himself. Here's what both looked like, phase by phase &mdash; and where PropertyAgent
+            actually changes something today.
           </p>
 
           <div class="persona-card">
@@ -160,18 +162,109 @@
             </div>
           </div>
 
-          <div class="screenshot-grid screenshot-grid--full">
-            <div class="screenshot-card">
-              <img src="../images/property-agent-journey-map.jpg" alt="Josh's homeownership journey map: a decision tree of what he weighs before buying, stats about the search dataset, a Trust Moment / Friction Point legend, his overall goals, and all four phases (Discovery & Search, Viewing & Shortlisting, Offer & Bidding, Admin Completion) broken into 16 steps with an experience curve and Joys/Frustrations rows" loading="lazy" />
-              <p class="screenshot-card-caption">Josh's full journey, decision tree, and search stats in one map &mdash; click to enlarge</p>
+          <div class="pj-overview">
+            <div class="pj-panel">
+              <h3 class="pj-panel-title">How Josh Decides</h3>
+              <div class="pj-tree-root-wrap">
+                <span class="pj-tree-root">Buying His First Resale Flat</span>
+              </div>
+              <div class="pj-tree-branches">
+                <div class="pj-tree-node">
+                  <span class="pj-tree-node-label">Where</span>
+                  <span class="pj-tree-node-value">Town &amp; proximity to school, work, family</span>
+                </div>
+                <div class="pj-tree-node">
+                  <span class="pj-tree-node-label">What</span>
+                  <span class="pj-tree-node-value">Flat type, size, budget</span>
+                </div>
+                <div class="pj-tree-node">
+                  <span class="pj-tree-node-label">When</span>
+                  <span class="pj-tree-node-value">Lease timing, CPF/loan eligibility window</span>
+                </div>
+                <div class="pj-tree-node">
+                  <span class="pj-tree-node-label">How</span>
+                  <span class="pj-tree-node-value">Bank vs HDB loan, DIY vs traditional agent</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pj-panel">
+              <h3 class="pj-panel-title">About the Search</h3>
+              <div class="pj-stat-grid">
+                <div class="pj-stat">
+                  <span class="pj-stat-num">~700</span>
+                  <span class="pj-stat-label">synthetic SG resale listings indexed in Elasticsearch</span>
+                </div>
+                <div class="pj-stat">
+                  <span class="pj-stat-num">Town + Furnishing</span>
+                  <span class="pj-stat-label">multi-select filter dimensions on top of conversational search</span>
+                </div>
+                <div class="pj-stat">
+                  <span class="pj-stat-num">3-way verdict</span>
+                  <span class="pj-stat-label">Overpriced / Fair value / Good deal, plus % deviation from median comparable PSF</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pj-panel">
+              <h3 class="pj-panel-title">Legend</h3>
+              <ul class="pj-legend-list">
+                <li><span class="pj-legend-icon pj-legend-icon--trust">&#9670;</span> Already solved by PropertyAgent today</li>
+                <li><span class="pj-legend-icon pj-legend-icon--friction">&mdash;</span> Not yet solved, either path &mdash; flagged in What's Next</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pj-goals">
+            <span class="pj-goal"><span class="pj-goal-icon">&#127968;</span> Find a flat that fits his life</span>
+            <span class="pj-goal"><span class="pj-goal-icon">&#128176;</span> Know he isn't overpaying</span>
+            <span class="pj-goal"><span class="pj-goal-icon">&#128197;</span> Get through the admin without missing a deadline</span>
+          </div>
+
+          <div class="pj-compare-wrap">
+            <div class="pj-compare">
+              <div class="pj-compare-cell pj-compare-rowlabel"></div>
+              <div class="pj-compare-cell pj-compare-phase">Search &amp; Discovery</div>
+              <div class="pj-compare-cell pj-compare-phase">Viewing &amp; Scheduling</div>
+              <div class="pj-compare-cell pj-compare-phase">Valuation &amp; Deciding to Bid</div>
+              <div class="pj-compare-cell pj-compare-phase">Negotiation &amp; Offer</div>
+              <div class="pj-compare-cell pj-compare-phase">Statutory Completion</div>
+
+              <div class="pj-compare-cell pj-compare-rowlabel">&#128100; With a Standard Agent</div>
+              <div class="pj-compare-cell">Calls a few agents from listings he's seen online, picks whoever answers first. The agent sends a "curated" shortlist &mdash; but Josh can't tell if it's curated for him or for the agent's other listings.</div>
+              <div class="pj-compare-cell">Viewings happen on the agent's schedule, not his &mdash; pushed back whenever the agent is juggling other clients that week.</div>
+              <div class="pj-compare-cell">Agent gives a verbal opinion on price ("I think it's fair"), but Josh has no independent way to check it, and the agent's commission depends on the deal closing either way.</div>
+              <div class="pj-compare-cell">Agent handles the back-and-forth, but Josh hears about counter-offers secondhand, on his own biggest purchase.</div>
+              <div class="pj-compare-cell">Agent walks him through OTP, Resale Application, and HFE &mdash; for a fee that's already 1&ndash;2% of the sale price, regardless of how much of this he actually needed help with.</div>
+
+              <div class="pj-compare-cell pj-compare-rowlabel">&#128694; Doing It Himself</div>
+              <div class="pj-compare-cell">Scrolls between three different portals, each with the same rigid dropdown filters. Wants a flat near a specific park and school; none of the filters capture that.</div>
+              <div class="pj-compare-cell">Messages each owner separately across WhatsApp and portal DMs, juggling five different calendars by hand to find a slot that works.</div>
+              <div class="pj-compare-cell">Manually pulls comparable resale prices off HDB's own portal and eyeballs a range himself, with no confidence he's reading it right.</div>
+              <div class="pj-compare-cell">Negotiates directly with the seller, with no one to buffer an awkward number or coach him through it.</div>
+              <div class="pj-compare-cell">Works through OTP, Resale Application, and HFE alone, tracking deadlines across HDB's portal, his bank, and his own memory.</div>
+
+              <div class="pj-compare-cell pj-compare-rowlabel">&#128172; Josh's Thinking</div>
+              <div class="pj-compare-cell pj-compare-thought">&ldquo;Either way, I can't tell if I'm seeing the full picture.&rdquo;</div>
+              <div class="pj-compare-cell pj-compare-thought">&ldquo;Coordinating this is basically turning into a part-time job.&rdquo;</div>
+              <div class="pj-compare-cell pj-compare-thought">&ldquo;Bid too high and I overpay. Bid too low and I lose the flat. I'm guessing either way.&rdquo;</div>
+              <div class="pj-compare-cell pj-compare-thought">&ldquo;It's my money on the line, but I don't feel fully in control of the conversation.&rdquo;</div>
+              <div class="pj-compare-cell pj-compare-thought">&ldquo;One missed HDB deadline and I've heard the whole timeline resets. No one's watching that for me.&rdquo;</div>
+
+              <div class="pj-compare-cell pj-compare-rowlabel">&#128161; Opportunity for PropertyAgent</div>
+              <div class="pj-compare-cell pj-compare-opportunity--solved">Conversational search extracts structured filters from plain language and searches the full live index &mdash; no agent's curation bias, no rigid dropdowns.</div>
+              <div class="pj-compare-cell pj-compare-opportunity--solved">Checks Google Calendar free/busy and books the slot directly &mdash; no scheduling around an agent or five separate owners.</div>
+              <div class="pj-compare-cell pj-compare-opportunity--solved">Instant percentile-based valuation verdict (Overpriced / Fair value / Good deal) with the number behind it, independent of any agent's incentive.</div>
+              <div class="pj-compare-cell pj-compare-opportunity--gap">Not yet built &mdash; negotiation still happens off-platform, same as both paths above.</div>
+              <div class="pj-compare-cell pj-compare-opportunity--gap">Not yet built &mdash; the statutory workflow stays entirely manual for now.</div>
             </div>
           </div>
 
           <div class="takeaway">
-            <strong>The bet:</strong> if Discovery-to-Viewing already feels faster than
-            switching between five listing sites, the agent earns the right to go
-            deeper into the transaction next: starting with valuation, then
-            scheduling, and eventually the statutory workflow the full PRD envisions.
+            <strong>The bet:</strong> search, scheduling, and valuation are the three phases where
+            neither a standard agent nor doing it alone gives Josh real leverage today &mdash; that's
+            where PropertyAgent already helps. Negotiation and the statutory workflow are still
+            open gaps, covered in What's Next.
           </div>
         </div>
 
