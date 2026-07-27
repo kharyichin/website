@@ -1143,6 +1143,11 @@
   justify-content: center;
 }
 
+.screenshot-grid--wide {
+  grid-template-columns: minmax(0, 560px);
+  justify-content: center;
+}
+
 /* Embedded launch videos, arranged like a social media grid */
 .social-grid {
   display: grid;
@@ -1230,6 +1235,19 @@
   font-size: 13px;
   font-weight: 600;
   color: var(--color-text-secondary);
+}
+
+.screenshot-card--plain {
+  border: none;
+  background: none;
+  border-radius: 0;
+}
+
+.screenshot-card--plain .screenshot-card-caption {
+  padding: 10px 0 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 /* Screenshot lightbox */
