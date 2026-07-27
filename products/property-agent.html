@@ -45,7 +45,7 @@
         <span class="product-tag">Hackathon Project</span>
         <h1>PropertyAgent</h1>
         <p class="product-subtitle">
-          Search Singapore property in plain English, get an instant fair-value verdict, and book the viewing — no agent required. Built in 9 days for the Google Cloud Rapid Agent Hackathon, Elastic partner track.
+          Search Singapore property in plain English, get an instant fair-value verdict, and book the viewing, no agent required. Built in 9 days for the Google Cloud Rapid Agent Hackathon, Elastic partner track.
         </p>
         <div class="product-meta-wrap">
           <div class="product-meta">
@@ -84,7 +84,7 @@
           <h2>The Pain Points</h2>
           <p>
             These pain points determined what we actually shipped first, not the full
-            platform vision in the PRD — see <a href="#scoping">Scoping It</a> for what's to come.
+            platform vision in the PRD. See <a href="#scoping">Scoping It</a> for what's to come.
           </p>
           <div class="pain-point-grid">
             <div class="pain-point-card">
@@ -94,7 +94,7 @@
                 have someone tell me information that's mostly already public... But they represent me in the transaction so I just go with it"
               </p>
               <p class="pain-point-link">
-                <strong>&rarr; No agent in the loop</strong> — search, valuation, and
+                <strong>&rarr; No agent in the loop</strong>: search, valuation, and
                 scheduling all live in one platform, with no commission anywhere in
                 the flow.
               </p>
@@ -105,7 +105,7 @@
                 "Most of the time we search with pre-set filters like location, size and price. But what if I wanted to live next to a park or a school, existing platforms exclude places like these"
               </p>
               <p class="pain-point-link">
-                <strong>&rarr; Conversational search</strong> — describe what you want
+                <strong>&rarr; Conversational search</strong>. Describe what you want
                 in plain language; the agent extracts structured filters and searches
                 live listings, not a fixed dropdown.
               </p>
@@ -117,7 +117,7 @@
                 COV, bid too low and I lose the flat."
               </p>
               <p class="pain-point-link">
-                <strong>&rarr; Instant valuation verdict</strong> — the agent compares
+                <strong>&rarr; Instant valuation verdict</strong>: the agent compares
                 a listing against comparable percentile pricing and returns
                 Overpriced / Fair value / Good deal, with the number behind it.
               </p>
@@ -129,7 +129,7 @@
                 different platforms and juggling everyone's calendar by hand. That's just the start of all the admin work that I need to do."
               </p>
               <p class="pain-point-link">
-                <strong>&rarr; Auto-scheduled viewings</strong> — the agent checks
+                <strong>&rarr; Auto-scheduled viewings</strong>. The agent checks
                 Google Calendar free/busy and books the slot directly, no
                 back-and-forth.
               </p>
@@ -149,7 +149,7 @@
                 <img class="persona-avatar" src="../images/persona-josh.jpg" alt="" loading="lazy" />
                 <div>
                   <span class="persona-label">Persona</span>
-                  <p class="persona-value">Josh — a first-time buyer, works as a teacher, doesn't have experience with resale transactions, and he doesnt have much time to think about this.</p>
+                  <p class="persona-value">Josh, a first-time buyer, works as a teacher, doesn't have experience with resale transactions, and he doesnt have much time to think about this.</p>
                 </div>
               </div>
             </div>
@@ -197,7 +197,7 @@
                   <th class="journey-map-rowlabel">Pain Point</th>
                   <td>Rigid filters miss what he's actually looking for</td>
                   <td>Manual coordination across owners and platforms eats time</td>
-                  <td>No anchor for what to bid — fear of overpaying or losing the unit</td>
+                  <td>No anchor for what to bid, fear of overpaying or losing the unit</td>
                   <td>No single source of truth for statutory deadlines</td>
                 </tr>
                 <tr class="journey-map-response-row">
@@ -205,7 +205,7 @@
                   <td>Extracts structured filters from open-ended text, searches a live Elasticsearch index instead of dropdowns</td>
                   <td>Agent checks calendar free/busy and books the viewing directly via the Google Calendar API</td>
                   <td>Compares listing PSF against percentile benchmarks from comparable listings, returns a verdict plus fair-price range</td>
-                  <td class="journey-map-dash">— out of hackathon scope</td>
+                  <td class="journey-map-dash">Out of hackathon scope</td>
                 </tr>
               </tbody>
             </table>
@@ -214,7 +214,7 @@
           <div class="takeaway">
             <strong>The bet:</strong> if Discovery-to-Viewing already feels faster than
             switching between five listing sites, the agent earns the right to go
-            deeper into the transaction next — starting with valuation, then
+            deeper into the transaction next: starting with valuation, then
             scheduling, and eventually the statutory workflow the full PRD envisions.
           </div>
         </div>
@@ -222,7 +222,7 @@
         <div class="product-section" id="scoping">
           <h2>Scoping It</h2>
           <p>
-            The PRD I wrote covers a full platform — Singpass verification, statutory
+            The PRD I wrote covers a full platform: Singpass verification, statutory
             milestone tracking, contract generation, monetization. Nine days with one
             engineer meant almost none of that could ship. Every cut needed an actual
             reason.
@@ -231,27 +231,27 @@
             <div class="crit-risk-block">
               <h3>Cut, and why</h3>
               <ul class="risk-list">
-                <li>Singpass verification &amp; MyInfo pull — needs real government API access and legal review, not a hackathon sandbox</li>
-                <li>Statutory milestone tracker (OTP, Request for Value, Resale Application) — high compliance surface area; needed real HDB data plumbing we didn't have time to build safely</li>
-                <li>Multi-language translation layer — nice to have, not core to proving the agent loop</li>
-                <li>Legal document generation (CEA tenancy agreement, OTP auto-fill) — regulatory risk, not something to prototype under deadline</li>
-                <li>Monetization (premium pass, legal closure kit, affiliate fees) — not needed to prove the concept</li>
+                <li>Singpass verification &amp; MyInfo pull: needs real government API access and legal review, not a hackathon sandbox</li>
+                <li>Statutory milestone tracker (OTP, Request for Value, Resale Application), which carries high compliance surface area; needed real HDB data plumbing we didn't have time to build safely</li>
+                <li>Multi-language translation layer, nice to have, not core to proving the agent loop</li>
+                <li>Legal document generation (CEA tenancy agreement, OTP auto-fill): regulatory risk, not something to prototype under deadline</li>
+                <li>Monetization (premium pass, legal closure kit, affiliate fees), not needed to prove the concept</li>
               </ul>
             </div>
             <div class="crit-risk-block">
               <h3>Kept, and why</h3>
               <ul class="crit-list">
-                <li>Conversational search over Elasticsearch — the core "beyond rigid filters" bet, and the reason for the Elastic partner track</li>
-                <li>Auto-scheduled viewings via Google Calendar — the clearest "no manual coordination" win, small enough to ship in days</li>
-                <li>Instant valuation verdict — a percentile-based read on price, without needing a licensed financial advice product</li>
-                <li>A synthetic ~700-listing dataset instead of live HDB/URA feeds — sidesteps data-access and licensing lead time while still proving the search-and-valuation loop end to end</li>
+                <li>Conversational search over Elasticsearch: the core "beyond rigid filters" bet, and the reason for the Elastic partner track</li>
+                <li>Auto-scheduled viewings via Google Calendar, the clearest "no manual coordination" win, small enough to ship in days</li>
+                <li>Instant valuation verdict: a percentile-based read on price, without needing a licensed financial advice product</li>
+                <li>A synthetic ~700-listing dataset instead of live HDB/URA feeds, sidestepping data-access and licensing lead time while still proving the search-and-valuation loop end to end</li>
               </ul>
             </div>
           </div>
           <div class="takeaway">
             <strong>Caught myself:</strong> the PRD called for a "walk-away price
             ceiling" from a full bidding simulator. What we could actually ship in a
-            week was a directional verdict, not a hard number — and framing it as a
+            week was a directional verdict, not a hard number, and framing it as a
             verdict rather than a guarantee turned out to be the more honest claim
             anyway.
           </div>
@@ -264,10 +264,10 @@
             a build against them without asking me what I meant. A few examples:
           </p>
           <ul class="crit-list">
-            <li>Filter extraction returns typed values through a function-tool call the frontend merges directly — no text-parsing fallback in production</li>
-            <li>A valuation verdict always states Overpriced / Fair value / Good deal plus the % deviation from median comparable PSF — never a bare label with no number behind it</li>
+            <li>Filter extraction returns typed values through a function-tool call the frontend merges directly, with no text-parsing fallback in production</li>
+            <li>A valuation verdict always states Overpriced / Fair value / Good deal plus the % deviation from median comparable PSF, never a bare label with no number behind it</li>
             <li>The agent auto-detects whether a message is a search request or a market question, and only calls the filter tool for the former, so analytics questions never corrupt the active filters</li>
-            <li>Viewing requests check the host's live Google Calendar free/busy before offering a slot — never book blind</li>
+            <li>Viewing requests check the host's live Google Calendar free/busy before offering a slot, never booking blind</li>
           </ul>
         </div>
 
@@ -276,7 +276,7 @@
           <p>
             One call shaped the rest: routing search and valuation through Elastic's
             own Kibana Agent Builder MCP server, rather than querying Elasticsearch
-            directly from application code — a requirement of the hackathon's Elastic
+            directly from application code. A requirement of the hackathon's Elastic
             partner track, and the reason filter search and valuation numbers reflect a
             live index instead of hardcoded logic.
           </p>
@@ -318,8 +318,8 @@
                     <span class="ta-box-title">Google ADK Agent</span>
                     <div class="ta-box-split">
                       <ul class="ta-box-list">
-                        <li>FunctionTools — extract_property_filters, get_free_slots, create_viewing_event</li>
-                        <li>MCP Toolset — generate_esql, execute_esql, get_index_mapping, search, get_document</li>
+                        <li>FunctionTools: extract_property_filters, get_free_slots, create_viewing_event</li>
+                        <li>MCP Toolset: generate_esql, execute_esql, get_index_mapping, search, get_document</li>
                       </ul>
                       <div class="ta-nested ta-nested--yellow">
                         <span class="ta-nested-title">Vertex AI</span>
@@ -333,11 +333,11 @@
               <div class="ta-external-arrows">
                 <div class="ta-arrow-col ta-arrow-col--green">
                   <span class="ta-arrow-line ta-arrow-line--dashed"></span>
-                  <span class="ta-arrow-label">MCP over HTTP (ES|QL) — search &amp; valuation queries</span>
+                  <span class="ta-arrow-label">MCP over HTTP (ES|QL), search &amp; valuation queries</span>
                 </div>
                 <div class="ta-arrow-col ta-arrow-col--red">
                   <span class="ta-arrow-line"></span>
-                  <span class="ta-arrow-label">Calendar API calls — free/busy &amp; create event</span>
+                  <span class="ta-arrow-label">Calendar API calls, free/busy &amp; create event</span>
                 </div>
               </div>
 
@@ -345,8 +345,8 @@
                 <div class="ta-box ta-box--green">
                   <span class="ta-box-title">Elastic Cloud</span>
                   <ul class="ta-box-list">
-                    <li>Kibana Agent Builder MCP — /api/agent_builder/mcp</li>
-                    <li>Elasticsearch — property index, ~700 SG listings</li>
+                    <li>Kibana Agent Builder MCP: /api/agent_builder/mcp</li>
+                    <li>Elasticsearch: property index, ~700 SG listings</li>
                   </ul>
                 </div>
                 <div class="ta-box ta-box--red">
@@ -363,8 +363,8 @@
 
           <div class="takeaway">
             <strong>Why:</strong> putting search, aggregations, and even ES|QL
-            generation behind Elastic's MCP tools — instead of writing our own query
-            layer — meant the agent could reason about the index directly, and it's
+            generation behind Elastic's MCP tools, instead of writing our own query
+            layer, meant the agent could reason about the index directly, and it's
             what qualified the build for the Elastic partner track.
           </div>
         </div>
@@ -423,25 +423,25 @@
               <h3>Risks encountered</h3>
               <ul class="risk-list">
                 <li>The model swap to Gemini 2.5 Flash landed mid-week, which meant re-validating agent behaviour late in the build</li>
-                <li>Map pins failed to render on initial load in one build — caught and fixed before demo day</li>
-                <li>Auth was pulled entirely just before submission so judges could reach the demo without credentials — a reasonable call for a judged demo, not how this would ship to real users</li>
+                <li>Map pins failed to render on initial load in one build, caught and fixed before demo day</li>
+                <li>Auth was pulled entirely just before submission so judges could reach the demo without credentials: a reasonable call for a judged demo, not how this would ship to real users</li>
               </ul>
             </div>
           </div>
           <div class="takeaway">
             <strong>Trade-off:</strong> a 9-day team hackathon means the PM's job is
-            deciding what doesn't get built, not just what does — see
+            deciding what doesn't get built, not just what does. See
             <a href="#scoping">Scoping It</a> for the calls that mattered most.
           </div>
         </div>
 
         <div class="product-section" id="roadmap">
           <h2>What's Next</h2>
-          <p>Straight from the pitch deck's closing slide — the gaps we know about:</p>
+          <p>The gaps we know about, straight from the pitch deck's closing slide:</p>
           <ul class="crit-list">
             <li>Buyer &amp; seller verification logic, to eliminate ghosting, lowballing, and false signals in self-directed deals</li>
             <li>A structured, data-backed bidding flow that goes beyond a directional verdict to lower emotional friction at offer stage</li>
-            <li>A step-by-step statutory milestone tracker — the Administrative Completion stage flagged as unbuilt in the <a href="#journey">Customer Journey</a> above</li>
+            <li>A step-by-step statutory milestone tracker: the Administrative Completion stage flagged as unbuilt in the <a href="#journey">Customer Journey</a> above</li>
           </ul>
         </div>
 
@@ -455,7 +455,7 @@
           <div class="takeaway">
             <strong>Next time:</strong> scope the language of a feature as carefully as
             its logic. Calling the valuation output a "verdict" instead of a
-            "prediction" wasn't just wording — it set the right expectation for what a
+            "prediction" wasn't just wording. It set the right expectation for what a
             percentile comparison can and can't promise.
           </div>
           <div class="takeaway">

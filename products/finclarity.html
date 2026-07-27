@@ -68,7 +68,7 @@
             I track money across three banks, two wallets, and a spreadsheet
             that I keep abandoning. FinClarity started as a fix for that, and as
             a chance to build something end to end. The Singapore market doesn't have a great answer to this
-            either — SGFinDex exists, but bank participation is low and getting fewer, so
+            either. SGFinDex exists, but bank participation is low and getting fewer, so
             most people are stuck tracking manually or not at all.
           </p>
           <div class="takeaway">
@@ -91,7 +91,7 @@
                 picture. Some of the cashback are stuck on other rewards platforms"
               </p>
               <p class="pain-point-link">
-                <strong>&rarr; Unified view</strong> — just upload your statements, regardless of which bank issued the statement. 
+                <strong>&rarr; Unified view</strong>: just upload your statements, regardless of which bank issued the statement.
                 Let us do the work for you. You just need 1 dashboard.
               </p>
             </div>
@@ -101,8 +101,8 @@
                 "Connecting accounts officially is practcally non-existent."
               </p>
               <p class="pain-point-link">
-                <strong>&rarr; No live API integration</strong> — statement
-                upload instead of bank credential sharing, sidesteps the
+                <strong>&rarr; No live API integration</strong>. Statement
+                upload instead of bank credential sharing sidesteps the
                 trust problem and the MAS licensing risk.
               </p>
             </div>
@@ -112,7 +112,7 @@
                 "I tried tracking in Excel and whatever spend tracker apps I could find. I gave up after a week."
               </p>
               <p class="pain-point-link">
-                <strong>&rarr; Zero manual entry</strong> — extraction is
+                <strong>&rarr; Zero manual entry</strong>. Extraction is
                 automatic; the only user action is uploading a PDF.
               </p>
             </div>
@@ -123,7 +123,7 @@
                 handles that well."
               </p>
               <p class="pain-point-link">
-                <strong>&rarr; Multi-currency as first-class</strong> — SGD
+                <strong>&rarr; Multi-currency as first-class</strong>: SGD
                 default with the original currency always visible inline.
               </p>
             </div>
@@ -143,7 +143,7 @@
                 <img class="persona-avatar" src="../images/persona-justin.jpg" alt="" loading="lazy" />
                 <div>
                   <span class="persona-label">Persona</span>
-                  <p class="persona-value">Justin, 27 — juggles money across several banks and e-wallets, no single view of where it's all going</p>
+                  <p class="persona-value">Justin, 27, juggles money across several banks and e-wallets, no single view of where it's all going</p>
                 </div>
               </div>
             </div>
@@ -228,20 +228,20 @@
             <div class="crit-risk-block">
               <h3>Cut, and why</h3>
               <ul class="risk-list">
-                <li>Live bank API / Plaid integration — legal complexity, MAS licensing risk</li>
-                <li>Investment recommendations — requires a regulated financial advice licence</li>
-                <li>Saving statement passwords — SG bank passwords are often NRIC/DOB; storing them is a security and PDPA risk, not a convenience worth the exposure</li>
-                <li>XP / levels tied to money — rejected on values grounds: don't signal that more money means higher status</li>
-                <li>Social / comparison features — not core to proving the insight loop works</li>
+                <li>Live bank API / Plaid integration: legal complexity, MAS licensing risk</li>
+                <li>Investment recommendations, which would require a regulated financial advice licence</li>
+                <li>Saving statement passwords. SG bank passwords are often NRIC/DOB, so storing them is a security and PDPA risk, not a convenience worth the exposure</li>
+                <li>XP / levels tied to money, rejected on values grounds: don't signal that more money means higher status</li>
+                <li>Social / comparison features, not core to proving the insight loop works</li>
               </ul>
             </div>
             <div class="crit-risk-block">
               <h3>Kept, and why</h3>
               <ul class="crit-list">
-                <li>Statement upload as the only input — automatic extraction, zero manual entry</li>
+                <li>Statement upload as the only input: automatic extraction, zero manual entry</li>
                 <li>Multi-currency as first-class, not a bolt-on</li>
                 <li>Progress-first narrative framing over a raw net-worth number</li>
-                <li>A monthly, not daily, check-in loop — frequent enough to build a habit without nagging</li>
+                <li>A monthly, not daily, check-in loop, frequent enough to build a habit without nagging</li>
               </ul>
             </div>
           </div>
@@ -285,9 +285,9 @@
                   <div class="ta-box ta-box--blue">
                     <span class="ta-box-title">Next.js Frontend</span>
                     <ul class="ta-box-list">
-                      <li>Upload UI — drag-and-drop, inline password prompt</li>
+                      <li>Upload UI: drag-and-drop, inline password prompt</li>
                       <li>Dashboard, breakdown views</li>
-                      <li>Demo page — sample data</li>
+                      <li>Demo page, sample data</li>
                     </ul>
                   </div>
 
@@ -296,13 +296,13 @@
                   <div class="ta-box ta-box--blue">
                     <span class="ta-box-title">Next.js API Routes</span>
                     <ul class="ta-box-list">
-                      <li>POST /api/statements/upload — full pipeline</li>
+                      <li>POST /api/statements/upload: full pipeline</li>
                       <li>GET /api/reports, /api/transactions</li>
-                      <li>Cron: /api/cron/reminders — daily</li>
+                      <li>Cron: /api/cron/reminders, daily</li>
                     </ul>
                     <div class="ta-nested ta-nested--amber">
                       <span class="ta-nested-title">pdfjs-dist</span>
-                      <span class="ta-nested-sub">Legacy build — in-memory parse + decrypt, password discarded after use</span>
+                      <span class="ta-nested-sub">Legacy build: in-memory parse + decrypt, password discarded after use</span>
                     </div>
                   </div>
 
@@ -313,7 +313,7 @@
                     <div class="ta-box-split">
                       <ul class="ta-box-list">
                         <li>PII-excluded extraction prompt</li>
-                        <li>Transfer detection — amount/date match</li>
+                        <li>Transfer detection, amount/date match</li>
                         <li>Narrative, observations, nudges</li>
                       </ul>
                       <div class="ta-nested ta-nested--yellow">
@@ -328,7 +328,7 @@
               <div class="ta-external-arrows">
                 <div class="ta-arrow-col ta-arrow-col--green">
                   <span class="ta-arrow-line ta-arrow-line--dashed"></span>
-                  <span class="ta-arrow-label">Authenticated writes only — anonymous sessions never persist</span>
+                  <span class="ta-arrow-label">Authenticated writes only; anonymous sessions never persist</span>
                 </div>
                 <div class="ta-arrow-col ta-arrow-col--red">
                   <span class="ta-arrow-line"></span>
@@ -340,9 +340,9 @@
                 <div class="ta-box ta-box--green">
                   <span class="ta-box-title">Supabase (Postgres)</span>
                   <ul class="ta-box-list">
-                    <li>6 tables — users, statements, transactions, monthly_reports, check_ins, exchange_rates</li>
-                    <li>Auth — anonymous + email sessions</li>
-                    <li>RLS off — accepted for hackathon scope</li>
+                    <li>6 tables: users, statements, transactions, monthly_reports, check_ins, exchange_rates</li>
+                    <li>Auth: anonymous + email sessions</li>
+                    <li>RLS off, accepted for hackathon scope</li>
                   </ul>
                 </div>
                 <div class="ta-box ta-box--red">
@@ -360,7 +360,7 @@
           <div class="takeaway">
             <strong>Why:</strong> the Files API doesn't handle
             password-protected PDFs. <code>pdfjs-dist</code> decrypts in
-            memory instead — it costs Claude's layout understanding, but
+            memory instead. It costs Claude's layout understanding, but
             bank statements are just line-by-line text, so that trade was
             fine.
           </div>
@@ -387,7 +387,7 @@
             </div>
             <div class="build-step" data-step="4">
               <div class="build-step-title">Dashboard</div>
-              <div class="build-step-body">Narrative summary, four summary cards, collapsible observations panel, and forward-looking nudges — all wired to live data.</div>
+              <div class="build-step-body">Narrative summary, four summary cards, collapsible observations panel, and forward-looking nudges, all wired to live data.</div>
             </div>
             <div class="build-step" data-step="5">
               <div class="build-step-title">Demo &amp; first-run experience</div>
@@ -414,16 +414,16 @@
                 <li>Detected internal transfers are auto-excluded from spending totals and surfaced separately under "Savings &amp; Transfers"</li>
                 <li>Mismatched statement date ranges trim analysis to the overlapping window and flag what was excluded</li>
                 <li>Foreign currency transactions show both the SGD equivalent and original currency inline, with an "as of [date]" exchange-rate note</li>
-                <li>Streak counter is based purely on check-in behaviour — never on spending or savings level</li>
+                <li>Streak counter is based purely on check-in behaviour, never on spending or savings level</li>
               </ul>
             </div>
             <div class="crit-risk-block">
               <h3>Risks encountered</h3>
               <ul class="risk-list">
-                <li>OCBC merchant-code formatting caused "Other" to dominate spending categories — extraction prompt needs a dedicated handling pass</li>
-                <li>No login page for returning users — they could sign up and upload but not sign back in, caught late in the build</li>
-                <li>pdfjs-dist v5 is ESM-only and threw a <code>DOMMatrix is not defined</code> error in Node — resolved by switching to the legacy build</li>
-                <li>Reminder emails depend on Resend domain verification — untested end-to-end, could fail silently</li>
+                <li>OCBC merchant-code formatting caused "Other" to dominate spending categories, so the extraction prompt needs a dedicated handling pass</li>
+                <li>No login page for returning users: they could sign up and upload but not sign back in, caught late in the build</li>
+                <li>pdfjs-dist v5 is ESM-only and threw a <code>DOMMatrix is not defined</code> error in Node, resolved by switching to the legacy build</li>
+                <li>Reminder emails depend on Resend domain verification and are untested end-to-end, so they could fail silently</li>
               </ul>
             </div>
           </div>
@@ -458,7 +458,7 @@
           <ul class="crit-list">
             <li>Login page for returning users, closing the gap flagged at deploy</li>
             <li>Account creation now saves session data to the database instead of only living in browser storage</li>
-            <li>Conditional "top card" insight tile — only appears once a user has 2+ distinct cards to compare</li>
+            <li>Conditional "top card" insight tile, which only appears once a user has 2+ distinct cards to compare</li>
             <li>Monthly budget tracker, added after realizing the narrative alone didn't answer "am I on track?"</li>
             <li>Animated spend-vs-save stat strip for a faster read of the month</li>
           </ul>
@@ -467,7 +467,7 @@
         <div class="product-section" id="reflection">
           <h2>Reflection</h2>
           <p>
-            The real surprise wasn't any single feature — it was that the
+            The real surprise wasn't any single feature. It was that the
             thing became real instead of staying an idea in my head.
           </p>
           <div class="takeaway">
@@ -478,7 +478,7 @@
           <div class="takeaway">
             <strong>Next time:</strong> own the debugging more instead of
             just describing symptoms. By the later steps I was already
-            diagnosing things myself — like realizing the transactions
+            diagnosing things myself, like realizing the transactions
             table was empty because extraction was failing before insert.
           </div>
         </div>
