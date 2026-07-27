@@ -2236,25 +2236,28 @@ body.lightbox-locked {
 /* overall goals bar */
 .pj-goals {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   margin: 0 0 28px;
-  padding: 14px 20px;
-  border-radius: 980px;
-  background: var(--color-accent);
-  text-align: center;
 }
 
 .pj-goal {
-  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
   font-weight: 600;
   color: #fff;
+  background: var(--color-accent);
+  padding: 12px 18px;
+  border-radius: 980px;
 }
 
-.pj-goal-sep {
-  color: rgba(255, 255, 255, 0.5);
+.pj-goal-icon {
+  flex-shrink: 0;
+  font-size: 13px;
 }
 
 /* main phase/step grid */
