@@ -239,6 +239,35 @@ h1, h2, h3 {
   transform: scale(1.1);
 }
 
+.nav-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-header-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  color: var(--color-text-secondary);
+  transition: background var(--transition-base), color var(--transition-base), transform var(--transition-base);
+}
+
+.nav-header-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.nav-header-link:hover {
+  background: var(--color-accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
 /* hamburger — always visible */
 .nav-toggle {
   display: flex;
@@ -460,11 +489,21 @@ h1, h2, h3 {
   color: var(--color-text-secondary);
   background: linear-gradient(rgba(0, 113, 227, 0.16), rgba(0, 113, 227, 0.16));
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 0% 100%;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   padding: 0.05em 0.3em;
   border-radius: 4px;
+}
+
+.about-content.visible .about-highlight {
+  animation: highlightSweep 0.9s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation-delay: 0.25s;
+}
+
+@keyframes highlightSweep {
+  from { background-size: 0% 100%; }
+  to { background-size: 100% 100%; }
 }
 
 .about-cta {

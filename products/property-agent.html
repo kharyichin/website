@@ -15,11 +15,18 @@
   <header class="site-header" id="site-header">
     <nav class="nav-container">
       <a href="../index.html" class="nav-logo">KY</a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-      </button>
-
+      <div class="nav-header-right">
+        <a href="https://www.linkedin.com/in/kharyi/" target="_blank" rel="noopener" class="nav-header-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:kharyichin@gmail.com" class="nav-header-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/></svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
   </header>
   <ul class="nav-links" id="nav-links">
@@ -162,101 +169,10 @@
             </div>
           </div>
 
-          <div class="pj-overview">
-            <div class="pj-panel">
-              <h3 class="pj-panel-title">How Josh Decides</h3>
-              <div class="pj-tree-root-wrap">
-                <span class="pj-tree-root">Buying His First Resale Flat</span>
-              </div>
-              <div class="pj-tree-branches">
-                <div class="pj-tree-node">
-                  <span class="pj-tree-node-label">Where</span>
-                  <span class="pj-tree-node-value">Town &amp; proximity to school, work, family</span>
-                </div>
-                <div class="pj-tree-node">
-                  <span class="pj-tree-node-label">What</span>
-                  <span class="pj-tree-node-value">Flat type, size, budget</span>
-                </div>
-                <div class="pj-tree-node">
-                  <span class="pj-tree-node-label">When</span>
-                  <span class="pj-tree-node-value">Lease timing, CPF/loan eligibility window</span>
-                </div>
-                <div class="pj-tree-node">
-                  <span class="pj-tree-node-label">How</span>
-                  <span class="pj-tree-node-value">Bank vs HDB loan, DIY vs traditional agent</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pj-panel">
-              <h3 class="pj-panel-title">About the Search</h3>
-              <div class="pj-stat-grid">
-                <div class="pj-stat">
-                  <span class="pj-stat-num">~700</span>
-                  <span class="pj-stat-label">synthetic SG resale listings indexed in Elasticsearch</span>
-                </div>
-                <div class="pj-stat">
-                  <span class="pj-stat-num">Town + Furnishing</span>
-                  <span class="pj-stat-label">multi-select filter dimensions on top of conversational search</span>
-                </div>
-                <div class="pj-stat">
-                  <span class="pj-stat-num">3-way verdict</span>
-                  <span class="pj-stat-label">Overpriced / Fair value / Good deal, plus % deviation from median comparable PSF</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pj-panel">
-              <h3 class="pj-panel-title">Legend</h3>
-              <ul class="pj-legend-list">
-                <li><span class="pj-legend-icon pj-legend-icon--trust">&#9670;</span> Already solved by PropertyAgent today</li>
-                <li><span class="pj-legend-icon pj-legend-icon--friction">&mdash;</span> Not yet solved, either path &mdash; flagged in What's Next</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="pj-goals">
-            <span class="pj-goal"><span class="pj-goal-icon">&#127968;</span> Find a flat that fits his life</span>
-            <span class="pj-goal"><span class="pj-goal-icon">&#128176;</span> Know he isn't overpaying</span>
-            <span class="pj-goal"><span class="pj-goal-icon">&#128197;</span> Get through the admin without missing a deadline</span>
-          </div>
-
-          <div class="pj-compare-wrap">
-            <div class="pj-compare">
-              <div class="pj-compare-cell pj-compare-rowlabel"></div>
-              <div class="pj-compare-cell pj-compare-phase">Search &amp; Discovery</div>
-              <div class="pj-compare-cell pj-compare-phase">Viewing &amp; Scheduling</div>
-              <div class="pj-compare-cell pj-compare-phase">Valuation &amp; Deciding to Bid</div>
-              <div class="pj-compare-cell pj-compare-phase">Negotiation &amp; Offer</div>
-              <div class="pj-compare-cell pj-compare-phase">Statutory Completion</div>
-
-              <div class="pj-compare-cell pj-compare-rowlabel">&#128100; With a Standard Agent</div>
-              <div class="pj-compare-cell">Calls a few agents from listings he's seen online, picks whoever answers first. The agent sends a "curated" shortlist &mdash; but Josh can't tell if it's curated for him or for the agent's other listings.</div>
-              <div class="pj-compare-cell">Viewings happen on the agent's schedule, not his &mdash; pushed back whenever the agent is juggling other clients that week.</div>
-              <div class="pj-compare-cell">Agent gives a verbal opinion on price ("I think it's fair"), but Josh has no independent way to check it, and the agent's commission depends on the deal closing either way.</div>
-              <div class="pj-compare-cell">Agent handles the back-and-forth, but Josh hears about counter-offers secondhand, on his own biggest purchase.</div>
-              <div class="pj-compare-cell">Agent walks him through OTP, Resale Application, and HFE &mdash; for a fee that's already 1&ndash;2% of the sale price, regardless of how much of this he actually needed help with.</div>
-
-              <div class="pj-compare-cell pj-compare-rowlabel">&#128694; Doing It Himself</div>
-              <div class="pj-compare-cell">Scrolls between three different portals, each with the same rigid dropdown filters. Wants a flat near a specific park and school; none of the filters capture that.</div>
-              <div class="pj-compare-cell">Messages each owner separately across WhatsApp and portal DMs, juggling five different calendars by hand to find a slot that works.</div>
-              <div class="pj-compare-cell">Manually pulls comparable resale prices off HDB's own portal and eyeballs a range himself, with no confidence he's reading it right.</div>
-              <div class="pj-compare-cell">Negotiates directly with the seller, with no one to buffer an awkward number or coach him through it.</div>
-              <div class="pj-compare-cell">Works through OTP, Resale Application, and HFE alone, tracking deadlines across HDB's portal, his bank, and his own memory.</div>
-
-              <div class="pj-compare-cell pj-compare-rowlabel">&#128172; Josh's Thinking</div>
-              <div class="pj-compare-cell pj-compare-thought">&ldquo;Either way, I can't tell if I'm seeing the full picture.&rdquo;</div>
-              <div class="pj-compare-cell pj-compare-thought">&ldquo;Coordinating this is basically turning into a part-time job.&rdquo;</div>
-              <div class="pj-compare-cell pj-compare-thought">&ldquo;Bid too high and I overpay. Bid too low and I lose the flat. I'm guessing either way.&rdquo;</div>
-              <div class="pj-compare-cell pj-compare-thought">&ldquo;It's my money on the line, but I don't feel fully in control of the conversation.&rdquo;</div>
-              <div class="pj-compare-cell pj-compare-thought">&ldquo;One missed HDB deadline and I've heard the whole timeline resets. No one's watching that for me.&rdquo;</div>
-
-              <div class="pj-compare-cell pj-compare-rowlabel">&#128161; Opportunity for PropertyAgent</div>
-              <div class="pj-compare-cell pj-compare-opportunity--solved">Conversational search extracts structured filters from plain language and searches the full live index &mdash; no agent's curation bias, no rigid dropdowns.</div>
-              <div class="pj-compare-cell pj-compare-opportunity--solved">Checks Google Calendar free/busy and books the slot directly &mdash; no scheduling around an agent or five separate owners.</div>
-              <div class="pj-compare-cell pj-compare-opportunity--solved">Instant percentile-based valuation verdict (Overpriced / Fair value / Good deal) with the number behind it, independent of any agent's incentive.</div>
-              <div class="pj-compare-cell pj-compare-opportunity--gap">Not yet built &mdash; negotiation still happens off-platform, same as both paths above.</div>
-              <div class="pj-compare-cell pj-compare-opportunity--gap">Not yet built &mdash; the statutory workflow stays entirely manual for now.</div>
+          <div class="screenshot-grid screenshot-grid--full">
+            <div class="screenshot-card">
+              <img src="../images/property-agent-journey-map.jpg" alt="Before PropertyAgent: Josh's homeownership journey, comparing a standard agent vs. doing it himself across five phases (Search & Discovery, Viewing & Scheduling, Valuation & Deciding to Bid, Negotiation & Offer, Statutory Completion), with his thoughts at each phase and an honest opportunity call-out for where PropertyAgent already helps today" loading="lazy" />
+              <p class="screenshot-card-caption">Standard agent vs. doing it himself, phase by phase &mdash; click to enlarge</p>
             </div>
           </div>
 
