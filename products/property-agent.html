@@ -69,7 +69,7 @@
             <span class="product-tag">Hackathon Project</span>
             <h1>PropertyAgent</h1>
             <p class="product-subtitle">
-              Search Singapore property in plain English, get an instant fair-value verdict, and book the viewing, no agent required. Built in 9 days for the Google Cloud Rapid Agent Hackathon, Elastic partner track.
+              Search Singapore property in plain English, get an instant fair-value verdict, and book the viewing, no agent required. A conversational agent that pulls live listings, cross-checks valuations, and handles scheduling end-to-end.
             </p>
             <div class="product-meta-wrap">
               <div class="product-meta">
@@ -200,7 +200,7 @@
 
           <div class="takeaway">
             <strong>The bet:</strong> search, scheduling, and valuation are the three phases where
-            neither a standard agent nor doing it alone gives Josh real leverage today &mdash; that's
+            neither a standard agent nor doing it alone gives Josh an edge today &mdash; that's
             where PropertyAgent already helps. Negotiation and the statutory workflow are still
             open gaps, covered in What's Next.
           </div>
@@ -209,17 +209,17 @@
         <div class="product-section" id="scoping">
           <h2>Scoping It</h2>
           <p>
-            The PRD I wrote covers a full platform: Singpass verification, statutory
-            milestone tracking, contract generation, monetization. Nine days with one
-            engineer meant almost none of that could ship. Every cut needed an actual
-            reason.
+            The PRD covers a full platform: Singpass verification, statutory
+            milestone tracking, contract generation, monetization. Shipping a focused
+            proof of the core agent loop meant almost none of that could make it into
+            this build. Every cut needed an actual reason.
           </p>
           <div class="crit-risk-grid">
             <div class="crit-risk-block">
               <h3>Cut, and why</h3>
               <ul class="risk-list">
-                <li>Singpass verification &amp; MyInfo pull: needs real government API access and legal review, not a hackathon sandbox</li>
-                <li>Statutory milestone tracker (OTP, Request for Value, Resale Application), which carries high compliance surface area; needed real HDB data plumbing we didn't have time to build safely</li>
+                <li>Singpass verification &amp; MyInfo pull: needs government API access and legal review, not a hackathon sandbox</li>
+                <li>Statutory milestone tracker (OTP, Request for Value, Resale Application), which carries high compliance surface area; needed HDB data plumbing we didn't have time to build safely</li>
                 <li>Multi-language translation layer, nice to have, not core to proving the agent loop</li>
                 <li>Legal document generation (CEA tenancy agreement, OTP auto-fill): regulatory risk, not something to prototype under deadline</li>
                 <li>Monetization (premium pass, legal closure kit, affiliate fees), not needed to prove the concept</li>
@@ -247,8 +247,8 @@
         <div class="product-section" id="requirements">
           <h2>Requirements</h2>
           <p>
-            The PRD turned scope into criteria specific enough that Wai Lun could check
-            a build against them without asking me what I meant. A few examples:
+            The PRD turned scope into criteria specific enough to check a build against
+            directly, with no guesswork about what was meant. A few examples:
           </p>
           <ul class="crit-list">
             <li>Filter extraction returns typed values through a function-tool call the frontend merges directly, with no text-parsing fallback in production</li>
@@ -359,8 +359,8 @@
         <div class="product-section" id="building">
           <h2>Building It</h2>
           <p>
-            Nine days, one engineer, each stage sitting on top of something that
-            already worked before the next layer went on.
+            Each stage built on top of something that already worked, before the
+            next layer went on.
           </p>
           <div class="build-steps">
             <div class="build-step" data-step="1">
@@ -391,10 +391,6 @@
               <div class="build-step-title">Viewing booking</div>
               <div class="build-step-body">Google Calendar free/busy and event-creation tools wired into the agent; map legend and filter fixes.</div>
             </div>
-            <div class="build-step" data-step="8">
-              <div class="build-step-title">Submission prep</div>
-              <div class="build-step-body">Auth removed so hackathon judges could reach the live demo without credentials; README, license, and architecture diagram finalized.</div>
-            </div>
           </div>
 
           <div class="crit-risk-grid">
@@ -411,7 +407,7 @@
               <ul class="risk-list">
                 <li>The model swap to Gemini 2.5 Flash landed mid-week, which meant re-validating agent behaviour late in the build</li>
                 <li>Map pins failed to render on initial load in one build, caught and fixed before demo day</li>
-                <li>Auth was pulled entirely just before submission so judges could reach the demo without credentials: a reasonable call for a judged demo, not how this would ship to real users</li>
+                <li>Auth was pulled entirely just before submission so judges could reach the demo without credentials: a reasonable call for a judged demo, not how this would ship to users</li>
               </ul>
             </div>
           </div>
@@ -419,32 +415,36 @@
 
         <div class="product-section" id="roadmap">
           <h2>What's Next</h2>
-          <p>The gaps we know about, straight from the pitch deck's closing slide:</p>
+          <p>
+            Search, scheduling, and valuation close the gaps a self-directed buyer
+            hits first. Negotiation and the statutory paperwork are where the same
+            buyer is still exposed, so that's where the next build goes:
+          </p>
           <ul class="crit-list">
-            <li>Buyer &amp; seller verification logic, to eliminate ghosting, lowballing, and false signals in self-directed deals</li>
-            <li>A structured, data-backed bidding flow that goes beyond a directional verdict to lower emotional friction at offer stage</li>
-            <li>A step-by-step statutory milestone tracker: the Administrative Completion stage flagged as unbuilt in the <a href="#journey">Customer Journey</a> above</li>
+            <li><strong>Buyer &amp; seller verification.</strong> Without an agent as a trust layer, self-directed deals are more exposed to ghosting, lowballing, and false signals from the other side — verification logic closes that gap.</li>
+            <li><strong>A structured, data-backed bidding flow.</strong> A directional fair-value verdict tells a buyer what to expect, not what to actually offer. Offer stage is the highest-stakes, most emotional decision in the process, and it's the one point still unsupported.</li>
+            <li><strong>A step-by-step statutory milestone tracker.</strong> This is the Administrative Completion stage flagged as unbuilt in the <a href="#journey">Customer Journey</a> above — the paperwork after an accepted offer is exactly where a deal can quietly stall.</li>
           </ul>
         </div>
 
         <div class="product-section" id="reflection">
           <h2>Reflection</h2>
           <p>
-            The real lesson here wasn't technical. It was how much ambiguity can hide
-            in a feature's language and in a requirement's wording if I'm not precise
-            about both. Two things I'd sharpen next time:
+            Ambiguity hiding in a feature's language, or in how a requirement was
+            worded, caused more trouble here than any technical issue did. Two
+            things I'd sharpen next time:
           </p>
           <div class="takeaway">
             <strong>Next time:</strong> scope the language of a feature as carefully as
             its logic. Calling the valuation output a "verdict" instead of a
-            "prediction" wasn't just wording. It set the right expectation for what a
-            percentile comparison can and can't promise.
+            "prediction" set the right expectation for what a percentile comparison
+            can and can't promise.
           </div>
           <div class="takeaway">
             <strong>Next time:</strong> write requirements as things checkable against
             a running agent, not just user stories. The PRD lines that held up best
-            under a hackathon deadline were the ones specific enough to verify without
-            asking me what I meant.
+            were the ones specific enough to verify without
+            any ambiguity about what was meant.
           </div>
         </div>
 
