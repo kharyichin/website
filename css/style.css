@@ -1478,44 +1478,7 @@ h1, h2, h3 {
   }
 
   .about-details {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .about-photo-wrap {
     display: none;
-  }
-
-  .detail-card-row {
-    position: static;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    flex: 1;
-    min-width: 100%;
-    gap: 16px;
-  }
-
-  .detail-card,
-  .detail-card--role {
-    flex: 1;
-    min-width: 120px;
-    max-width: none;
-    width: auto;
-    height: auto;
-    border-radius: 14px;
-    padding: 20px 24px;
-    align-items: flex-start;
-    text-align: left;
-    transform: none;
-  }
-
-  .detail-card--years {
-    flex: none;
-    width: 92px;
-    height: 92px;
-    transform: none;
-    margin: 0 auto;
   }
 
   .work-grid {
@@ -1626,21 +1589,6 @@ h1, h2, h3 {
     width: 100%;
     max-width: 280px;
     text-align: center;
-  }
-
-  .about-details {
-    flex-direction: column;
-  }
-
-  .detail-card {
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    padding: 20px 24px;
-  }
-
-  .detail-number {
-    font-size: 24px;
   }
 
   .contact-links {

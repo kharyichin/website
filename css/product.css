@@ -43,6 +43,10 @@
   text-align: left;
 }
 
+.product-hero-text {
+  min-width: 0;
+}
+
 .product-hero--split .product-subtitle {
   margin: 0;
   max-width: none;
@@ -53,6 +57,7 @@
 }
 
 .product-hero-media {
+  min-width: 0;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--color-border);
