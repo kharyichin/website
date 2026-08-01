@@ -793,14 +793,11 @@ h1, h2, h3 {
   font-weight: 500;
   color: var(--color-accent);
   margin-top: 20px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease 0.06s, transform 0.3s ease 0.06s;
+  transition: transform 0.3s ease;
 }
 
 .work-card:hover .work-link {
-  opacity: 1;
-  transform: translateY(0);
+  transform: translateX(4px);
 }
 
 
