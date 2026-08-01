@@ -1,3 +1,20 @@
+// strip utm_ params from the visible URL after analytics has captured them
+(() => {
+  if (!window.location.search) return;
+  const params = new URLSearchParams(window.location.search);
+  let touched = false;
+  [...params.keys()].forEach((key) => {
+    if (key.startsWith("utm_")) {
+      params.delete(key);
+      touched = true;
+    }
+  });
+  if (!touched) return;
+  const query = params.toString();
+  const cleanUrl = window.location.pathname + (query ? `?${query}` : "") + window.location.hash;
+  window.history.replaceState({}, document.title, cleanUrl);
+})();
+
 // animated favicon intro — cycles ◦ • ☻ then holds on ☻
 (() => {
   const frames = ["◦", "•", "☻"];
