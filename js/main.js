@@ -55,19 +55,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // close when any link inside the sidebar is clicked (navigation follows naturally)
   links.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
 
-  // custom eased scroll
-  function smoothScrollTo(targetY, duration = 700) {
-    const startY = window.scrollY;
-    const distance = targetY - startY;
-    let startTime = null;
-    const ease = (t) => 1 - Math.pow(1 - t, 3);
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      window.scrollTo(0, startY + distance * ease(progress));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
+  // Scroll to an anchor using the page's native smooth-scroll (CSS
+  // `scroll-behavior: smooth` on <html>), then re-issue the same scroll a
+  // few times as follow-ups. A single native call can't fight itself the
+  // way a manual requestAnimationFrame loop calling scrollTo every frame
+  // would (each of those re-triggers the CSS smooth animation and they
+  // cancel each other out). The follow-ups exist because none of this
+  // page's images have width/height set, so lazy-loaded images below the
+  // target keep shifting the layout for a bit after the first scroll.
+  function smoothScrollTo(getTargetY) {
+    const scrollToTarget = () => window.scrollTo({ top: getTargetY(), left: 0, behavior: "smooth" });
+    scrollToTarget();
+    [300, 700, 1200].forEach((delay) => setTimeout(scrollToTarget, delay));
   }
 
   // smooth-scroll for in-page anchors only
@@ -79,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeNav();
       const offset = parseInt(getComputedStyle(document.documentElement)
         .getPropertyValue("--header-height"));
-      smoothScrollTo(target.getBoundingClientRect().top + window.scrollY - offset - 12);
+      smoothScrollTo(() => target.getBoundingClientRect().top + window.scrollY - offset - 12);
     });
   });
 
