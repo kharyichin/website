@@ -109,6 +109,129 @@ document.addEventListener("DOMContentLoaded", () => {
       { rootMargin: "-20% 0px -70% 0px" }
     );
     sections.forEach((s) => tocObserver.observe(s));
+
+    // reading-progress rail: fills as the reader moves through .product-main
+    const tocFill = toc.querySelector(".product-toc-rail-fill");
+    const mainContent = document.querySelector(".product-main");
+    if (tocFill && mainContent) {
+      const headerH = () => parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue("--header-height")) || 0;
+      let ticking = false;
+      const updateRail = () => {
+        const rect = mainContent.getBoundingClientRect();
+        const total = rect.height - window.innerHeight + headerH();
+        const scrolled = headerH() - rect.top;
+        const progress = total > 0 ? Math.min(1, Math.max(0, scrolled / total)) : 0;
+        tocFill.style.height = `${progress * toc.getBoundingClientRect().height}px`;
+        ticking = false;
+      };
+      updateRail();
+      window.addEventListener("scroll", () => {
+        if (!ticking) { requestAnimationFrame(updateRail); ticking = true; }
+      }, { passive: true });
+      window.addEventListener("resize", updateRail);
+    }
+  }
+
+  // staggered reveal for grid/list children (case-study scrollytelling groups)
+  const staggerGroups = document.querySelectorAll(".stagger");
+  staggerGroups.forEach((group) => {
+    Array.from(group.children).forEach((child, i) => child.style.setProperty("--i", i));
+  });
+  const staggerObserver = new IntersectionObserver(
+    (entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("visible");
+      staggerObserver.unobserve(e.target);
+    }),
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+  staggerGroups.forEach((g) => staggerObserver.observe(g));
+
+  // animated count-up for stat numbers (e.g. "80,000+", "82%")
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const statNumbers = document.querySelectorAll(".stat-number");
+  if (statNumbers.length && !reduceMotion) {
+    const countUp = (el) => {
+      const match = el.textContent.trim().match(/^(\D*)([\d,]+)(.*)$/);
+      if (!match) return;
+      const [, prefix, digits, suffix] = match;
+      const target = parseInt(digits.replace(/,/g, ""), 10);
+      if (!Number.isFinite(target)) return;
+      const duration = 1200;
+      const start = performance.now();
+      const tick = (now) => {
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = `${prefix}${Math.round(target * eased).toLocaleString("en-US")}${suffix}`;
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const statObserver = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        countUp(e.target);
+        statObserver.unobserve(e.target);
+      }),
+      { threshold: 0.4 }
+    );
+    statNumbers.forEach((el) => statObserver.observe(el));
+  }
+
+  // channel hub-and-spoke: lines draw out and nodes pop along each spoke as it scrolls into view
+  const hub = document.querySelector(".channel-hub");
+  if (hub) {
+    if (reduceMotion) {
+      hub.classList.add("hub-visible");
+    } else {
+      const lines = hub.querySelectorAll(".channel-hub-lines line");
+      const circles = hub.querySelectorAll(".channel-hub-lines circle");
+      const nodes = hub.querySelectorAll(".channel-node");
+      lines.forEach((line, i) => {
+        const len = line.getTotalLength();
+        line.style.strokeDasharray = String(len);
+        line.style.strokeDashoffset = String(len);
+        line.style.setProperty("--i", i);
+      });
+      circles.forEach((c, i) => c.style.setProperty("--i", i));
+      nodes.forEach((n, i) => n.style.setProperty("--i", i));
+
+      const hubObserver = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          hub.classList.add("hub-visible");
+          lines.forEach((line) => { line.style.strokeDashoffset = "0"; });
+          hubObserver.unobserve(e.target);
+        }),
+        { threshold: 0.3 }
+      );
+      hubObserver.observe(hub);
+    }
+  }
+
+  // GTM funnel: stages drop into place top to bottom as it scrolls into view
+  const funnel = document.querySelector(".gtm-funnel2");
+  if (funnel) {
+    if (reduceMotion) {
+      funnel.classList.add("funnel-visible");
+    } else {
+      const setIndices = (selector) => funnel.querySelectorAll(selector)
+        .forEach((el, i) => el.style.setProperty("--i", i));
+      setIndices(".gtm-funnel2-shape");
+      setIndices(".gtm-funnel2-arrow");
+      setIndices(".gtm-funnel2-card");
+
+      const funnelObserver = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          funnel.classList.add("funnel-visible");
+          funnelObserver.unobserve(e.target);
+        }),
+        { threshold: 0.2 }
+      );
+      funnelObserver.observe(funnel);
+    }
   }
 
   // screenshot lightbox

@@ -1431,6 +1431,27 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
+/* staggered reveal for grid/list children, e.g. stat tiles, timeline steps */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+.stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @keyframes fadeUp {
   to {
     opacity: 1;

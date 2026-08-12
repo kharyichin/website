@@ -1542,6 +1542,22 @@ body.lightbox-locked {
   border-left: 1px solid var(--color-border);
 }
 
+.product-toc-rail-fill {
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 1px;
+  height: 0%;
+  background: var(--color-accent);
+  transition: height 0.15s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-toc-rail-fill {
+    transition: none;
+  }
+}
+
 .product-toc-label {
   font-size: 11px;
   font-weight: 600;
@@ -1640,17 +1656,31 @@ body.lightbox-locked {
 .channel-hub-lines line {
   stroke: var(--color-border);
   stroke-width: 0.5;
+  transition: stroke-dashoffset 0.9s ease;
+  transition-delay: calc(0.3s + var(--i, 0) * 180ms);
 }
 
 .channel-hub-lines circle {
   fill: var(--color-accent);
+  opacity: 0;
+  transform: scale(0);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition-delay: calc(1.05s + var(--i, 0) * 180ms);
+}
+
+.channel-hub.hub-visible .channel-hub-lines circle {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .channel-hub-center {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
   width: 118px;
   height: 118px;
   border-radius: 50%;
@@ -1666,11 +1696,18 @@ body.lightbox-locked {
   padding: 8px;
   box-shadow: 0 10px 26px rgba(0, 113, 227, 0.35);
   z-index: 2;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.channel-hub.hub-visible .channel-hub-center {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .channel-node {
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.82);
+  opacity: 0;
   width: 188px;
   background: var(--color-card-bg);
   border: 1px solid var(--color-border);
@@ -1678,6 +1715,32 @@ body.lightbox-locked {
   padding: 12px 14px;
   z-index: 1;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: calc(1.15s + var(--i, 0) * 180ms);
+}
+
+.channel-hub.hub-visible .channel-node {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .channel-hub-lines line {
+    transition: none;
+  }
+
+  .channel-hub-lines circle,
+  .channel-hub-center,
+  .channel-node {
+    transition: none;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .channel-hub-center,
+  .channel-node {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .channel-node-tag {
@@ -1744,6 +1807,51 @@ body.lightbox-locked {
 
 .gtm-funnel2-shape span {
   color: #fff;
+}
+
+.gtm-funnel2-shape,
+.gtm-funnel2-arrow,
+.gtm-funnel2-card {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: calc(var(--i, 0) * 220ms);
+}
+
+.gtm-funnel2-shape {
+  transform: translateY(-18px) scaleX(1.12);
+}
+
+.gtm-funnel2-arrow {
+  transform: translateY(-10px);
+}
+
+.gtm-funnel2-card {
+  transform: translateY(-12px);
+}
+
+.gtm-funnel2.funnel-visible .gtm-funnel2-shape {
+  transform: translateY(0) scaleX(1);
+}
+
+.gtm-funnel2.funnel-visible .gtm-funnel2-arrow,
+.gtm-funnel2.funnel-visible .gtm-funnel2-card {
+  transform: translateY(0);
+}
+
+.gtm-funnel2.funnel-visible .gtm-funnel2-shape,
+.gtm-funnel2.funnel-visible .gtm-funnel2-arrow,
+.gtm-funnel2.funnel-visible .gtm-funnel2-card {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gtm-funnel2-shape,
+  .gtm-funnel2-arrow,
+  .gtm-funnel2-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .gtm-funnel2-shape--1 { width: 100%; background: linear-gradient(135deg, #0071e3, #0058b1); clip-path: polygon(6% 0%, 94% 0%, 84% 100%, 16% 100%); }
@@ -2225,38 +2333,4 @@ body.lightbox-locked {
 .award-card-body h3 {
   font-size: 15px;
   margin: 0;
-}
-
-.award-photo-placeholder {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 16px;
-  border: 1px dashed var(--color-border);
-  border-radius: 12px;
-  padding: 16px 20px;
-  background: var(--color-bg-alt);
-}
-
-.award-photo-placeholder-icon {
-  flex: none;
-  width: 32px;
-  height: 32px;
-  color: var(--color-text-secondary);
-}
-
-.award-photo-placeholder-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.award-photo-placeholder p {
-  margin: 0;
-  font-size: 14px;
-  font-style: italic;
-  color: var(--color-text-secondary);
-}
-
-.award-photo-placeholder code {
-  font-style: normal;
 }
