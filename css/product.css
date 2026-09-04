@@ -79,6 +79,15 @@
   box-shadow: none;
 }
 
+/* Split hero, media-weighted: same split layout, just gives the media column a bit more room than the default 1.05/0.95 (for a demo video/GIF worth showing slightly larger) */
+.product-hero--split-lg .product-hero-inner {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.product-hero-media.hero-lightbox img {
+  cursor: zoom-in;
+}
+
 @media (max-width: 900px) {
   .product-hero--split .product-hero-inner {
     grid-template-columns: 1fr;

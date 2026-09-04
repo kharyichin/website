@@ -159,9 +159,15 @@
     <section class="work" id="work">
       <div class="container">
         <h2 class="section-label">Things I Have Been Up To</h2>
+        <div class="work-filter" role="group" aria-label="Filter by category">
+          <button type="button" class="work-filter-btn is-active" data-filter="all">All</button>
+          <button type="button" class="work-filter-btn" data-filter="work">Work</button>
+          <button type="button" class="work-filter-btn" data-filter="side-projects">Side Projects</button>
+          <button type="button" class="work-filter-btn" data-filter="hackathons">Hackathons</button>
+        </div>
         <div class="work-grid">
 
-          <a href="products/myown-account.html" class="work-card">
+          <a href="products/myown-account.html" class="work-card" data-category="work">
             <div class="work-card-media gallery">
               <img class="is-active" src="images/myown-app-screenshot.png" alt="OCBC MyOwn Account app screen, showing the welcome message, PayNow/Scan &amp; Pay/Deals quick actions, and account balance" loading="lazy" />
             </div>
@@ -173,7 +179,7 @@
             </div>
           </a>
 
-          <a href="products/property-agent.html" class="work-card">
+          <a href="products/property-agent.html" class="work-card" data-category="hackathons">
             <div class="work-card-media gallery">
               <img class="is-active" src="images/google-cloud-rapid-agent-hackathon.png" alt="Google Cloud Rapid Agent Hackathon banner" loading="lazy" />
               <img src="images/property-agent-architecture.png" alt="PropertyAgent technical architecture diagram, showing the Next.js app on Google Cloud Run connected to a Google ADK agent, Elastic Cloud, and the Google Calendar API" loading="lazy" />
@@ -186,7 +192,7 @@
             </div>
           </a>
 
-          <a href="products/finclarity.html" class="work-card">
+          <a href="products/finclarity.html" class="work-card" data-category="side-projects">
             <div class="work-card-media gallery">
               <img class="is-active" src="images/finclarity-scroll.gif" alt="Scrolling through the FinClarity demo dashboard, showing a monthly spending summary, saved amount, and category breakdown" loading="lazy" />
               <img src="images/finclarity-demo.png" alt="FinClarity demo dashboard with sample data" loading="lazy" />
@@ -196,6 +202,18 @@
               <span class="work-tag">Side Project</span>
               <h3>FinClarity</h3>
               <p>Your money is somewhere — FinClarity shows you where. Upload a bank statement and get one clear monthly picture: spending breakdowns, budgets, and savings, at a glance.</p>
+              <span class="work-link">View project &rarr;</span>
+            </div>
+          </a>
+
+          <a href="products/personal-cfo.html" class="work-card" data-category="hackathons">
+            <div class="work-card-media gallery">
+              <img class="is-active" src="images/personal-cfo-hero.jpg" alt="Khar Yi and her teammate at Snowflake's Menlo Park HQ during the Snowflake x EverOS hackathon" loading="lazy" />
+            </div>
+            <div class="work-card-inner">
+              <span class="work-tag">Hackathon Project</span>
+              <h3>Personal CFO</h3>
+              <p>Knows what you spent, remembers what matters. A personal finance assistant built with a teammate at a Snowflake x EverOS hackathon that holds onto your priorities between conversations instead of resetting every time.</p>
               <span class="work-link">View project &rarr;</span>
             </div>
           </a>
@@ -473,6 +491,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

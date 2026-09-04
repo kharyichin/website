@@ -201,6 +201,7 @@ h1, h2, h3 {
 .nav-icon-chart { transform: none; transform-box: fill-box; transform-origin: center bottom; }
 .nav-icon-house { transform: none; }
 .nav-icon-mail  { transform: none; }
+.nav-icon-spark { transform: none; }
 
 .nav-links a:hover .nav-icon-bank   { transform: scale(1.15) rotate(-8deg); }
 .nav-links a:hover .nav-icon-mega   { transform: scale(1.15) rotate(-14deg); }
@@ -208,6 +209,7 @@ h1, h2, h3 {
 .nav-links a:hover .nav-icon-chart  { transform: scaleY(1.2); }
 .nav-links a:hover .nav-icon-house  { transform: scale(1.15) rotate(-6deg); }
 .nav-links a:hover .nav-icon-mail   { transform: scale(1.15); }
+.nav-links a:hover .nav-icon-spark  { transform: scale(1.2) rotate(20deg); }
 
 .mail-closed, .mail-open { transition: opacity 0.18s ease; }
 .mail-open { opacity: 0; }
@@ -677,6 +679,44 @@ h1, h2, h3 {
 
 .work {
   padding: 100px 0;
+}
+
+.work-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 960px;
+  margin: 0 auto 32px;
+}
+
+.work-filter-btn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+}
+
+.work-filter-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+}
+
+.work-filter-btn.is-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+.work-card.is-filtered-out {
+  display: none;
 }
 
 .work-grid {

@@ -1,5 +1,21 @@
 # TODO
 
+- [ ] Personal CFO case study (`products/personal-cfo.html`, added 2026-09-02).
+      Hero/homepage card use the real team photo (`images/personal-cfo-hero.jpg`,
+      converted from `images/Snowflake/IMG_7564.HEIC`), and a Screenshots
+      section uses `images/personal-cfo-{dashboard,memory-panel,chat-afford,
+      cortex-deepdive}.png` + `personal-cfo-walkthrough.gif` (converted from
+      the 88s screen recording in `images/Snowflake/`). Still needed:
+      **Reflection section** — left out of the page entirely for now per
+      Khar Yi's request ("leave it blank, will talk about reflections
+      later"). Once she gives the content, add a `#reflection`
+      `product-section` (see PropertyAgent's for the pattern) and a
+      matching `product-toc` link, on this page only.
+      Once the page is finalized, consider deleting the now-unused
+      `images/Snowflake/` source folder (raw screenshots + .mov + .heic,
+      ~50MB) to keep the repo lean — left in place for now in case a
+      different crop/frame is wanted.
+
 - [x] Add a FinClarity demo GIF/screenshot next to the "Selected Work" card on
       the homepage (`index.html`, `.work` section). Done (2026-07-12):
       captured a viewport screenshot of https://getfinclarity.vercel.app/demo
@@ -37,3 +53,24 @@
       /demo sample data doesn't persist to those routes (they're the real,
       unauthenticated empty state), so this shows app structure/interaction
       rather than fake data.
+
+- [ ] Decide whether to keep the homepage hero cursor-glow + parallax effect
+      (uncommitted as of 2026-07-30). Changes are already made and working,
+      just sitting in the working tree, not committed/pushed:
+      - `index.html`: hero-decor markup restructured — added `.hero-glow` div
+        and wrapped each blob/pixel-icon in a `.hero-parallax` div with an
+        inline `--depth` custom property.
+      - `css/style.css`: `.hero-glow` (cursor-following radial light,
+        `.hero--pointer-active` toggles opacity) and `.hero-parallax`
+        (translates via `--hero-px`/`--hero-py` custom properties, composed
+        with each blob's existing idle float animation). Respects
+        `prefers-reduced-motion`.
+      - `js/main.js`: new "hero cursor-reactive glow + parallax" block —
+        mousemove/mouseleave listeners on `.hero`, gated on
+        `(pointer: fine)` and not `prefers-reduced-motion`, rAF-throttled.
+      - Also reverted the hero-photo desktop change from earlier in the same
+        session (photo was appearing twice vs. the About section photo) —
+        `hero-photo` is back to mobile-only, just renamed from
+        `hero-photo-mobile`.
+      - If keeping it: commit and push. If not: `git checkout` these three
+        files to discard.

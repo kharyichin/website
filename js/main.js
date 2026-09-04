@@ -234,8 +234,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // screenshot lightbox
-  const shots = document.querySelectorAll(".screenshot-card img");
+  // screenshot lightbox (also covers hero images opted in via .hero-lightbox)
+  const shots = document.querySelectorAll(".screenshot-card img, .hero-lightbox img");
   if (shots.length) {
     const lightbox = document.createElement("div");
     lightbox.className = "lightbox";
@@ -284,6 +284,23 @@ document.addEventListener("DOMContentLoaded", () => {
       if (flip) flip.classList.toggle("is-flipped");
     });
   });
+
+  // work-grid filter (All / Work / Side Projects / Hackathons)
+  const filterBtns = document.querySelectorAll(".work-filter-btn");
+  const workCards = document.querySelectorAll(".work-card[data-category]");
+  if (filterBtns.length && workCards.length) {
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        const filter = btn.dataset.filter;
+        workCards.forEach((card) => {
+          const show = filter === "all" || card.dataset.category === filter;
+          card.classList.toggle("is-filtered-out", !show);
+        });
+      });
+    });
+  }
 
   // work-card image galleries
   document.querySelectorAll(".work-card-media.gallery").forEach((media) => {
